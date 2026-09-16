@@ -11,9 +11,14 @@ III.O jogo contará com "Chefões" que dificultam a jornada.
 IV.O jogo será baseado em diálogos e um escolha dentre 2 opções disponíveis.
 
 V.Para jogar:
-    i.Abra o console e compile o código digitando: 'gcc magus.c -o magus -lm'
+    i.Abra o console e compile o código digitando: 'make' (ou 'gcc *.c -o magus -lm')
 
-    ii.Execute o jogo: ./magus
+    ii.Execute o jogo: ./main (ou ./magus, se compilado com gcc)
+
+    iii.O código-fonte está dividido em: main.c (menu principal), magus.h
+    (tipos e protótipos compartilhados), ui.c (tela, banner e placar) e
+    nivel_basico.c / nivel_medio.c / nivel_avancado.c (a história de cada
+    nível de dificuldade).
 
 VI.Obrigado por Jogar e Divirta-se!!
 

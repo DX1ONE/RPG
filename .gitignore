@@ -1,0 +1,6 @@
+main
+main-debug
+magus
+*.o
+*.d
+.ccls-cache/
