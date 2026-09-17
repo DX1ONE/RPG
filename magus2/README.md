@@ -43,6 +43,23 @@ No menu principal, digite seu nome, escolha **Novo Jogo**, escolha o
 Avançado). A partir daí é só ler o texto e responder as perguntas com o
 número indicado entre parênteses.
 
+### Jogar no navegador (celular incluso)
+
+O jogo também roda direto no navegador — compilado para WebAssembly, com um
+terminal (xterm.js) fazendo o papel do console. Dá pra abrir num link só,
+sem instalar nada, então é o jeito de jogar no celular ou mandar pra alguém
+testar pelo WhatsApp.
+
+Pasta `web/`: `web/index.html` é a página, `web/build.sh` compila o jogo
+para `web/dist/` (precisa de [emscripten](https://emscripten.org/) instalado
+— `apt-get install emscripten` — e de rede pra baixar o xterm.js via npm).
+
+```
+cd web
+./build.sh
+python3 -m http.server -d dist 8080   # ou qualquer servidor estático
+```
+
 ## Estrutura do código
 
 | Arquivo | Conteúdo |

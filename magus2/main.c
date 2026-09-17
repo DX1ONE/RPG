@@ -9,6 +9,14 @@
 
 int main()
 {
+#ifdef __EMSCRIPTEN__
+    // No navegador, cada leitura de stdin precisa virar uma chamada de
+    // sistema por vez (para poder pausar/retomar a execução com Asyncify
+    // enquanto espera o jogador digitar); com o stdin bufferizado, a
+    // libc tenta preencher um buffer grande de uma vez e quebra isso.
+    setvbuf(stdin, NULL, _IONBF, 0);
+#endif
+
     srand(time(NULL));
 
     int opcao = -1;      //Alternativas no Menu do Jogo

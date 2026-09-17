@@ -4,9 +4,23 @@
 
 #include "magus.h"
 
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+
+EM_JS(void, js_limpar_tela, (void), {
+    if (typeof Module.magusClear === "function") {
+        Module.magusClear();
+    }
+});
+#endif
+
 void limpar_tela(void)
 {
+#ifdef __EMSCRIPTEN__
+    js_limpar_tela();
+#else
     system("clear");
+#endif
 }
 
 void mostrar_logo_magus(void)

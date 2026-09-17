@@ -1,0 +1,303 @@
+<title>MAGUS 2</title>
+<link rel="stylesheet" href="xterm.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0a13;
+    --surface:#161222;
+    --surface-2:#1e1830;
+    --ink:#ece6d9;
+    --muted:#948c9e;
+    --accent:#d9a441;
+    --accent-soft:#f0c878;
+    --violet:#7c5cff;
+    --rule:#332b48;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--ink)}
+  body{
+    font-family:'Work Sans',system-ui,-apple-system,sans-serif;
+    display:flex;
+    flex-direction:column;
+    padding-inline:16px;
+    padding-block:14px;
+    gap:10px;
+    overflow:hidden;
+  }
+
+  .top{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  h1{
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    font-size:clamp(20px,5vw,28px);
+    letter-spacing:.04em;
+    margin:0;
+    color:var(--accent-soft);
+    text-shadow:0 0 18px rgba(217,164,65,.35);
+  }
+  h1 small{
+    display:block;
+    font-family:'Work Sans',sans-serif;
+    font-weight:500;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:2px;
+  }
+
+  .controls{display:flex;gap:8px;align-items:center;flex-shrink:0}
+  button{
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    color:var(--ink);
+    background:var(--surface-2);
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:7px 14px;
+    cursor:pointer;
+  }
+  button:hover{border-color:var(--accent)}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+  details{flex-shrink:0}
+  summary{
+    cursor:pointer;
+    font-size:12.5px;
+    color:var(--muted);
+    list-style:none;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸ ";color:var(--accent)}
+  details[open] summary::before{content:"▾ "}
+  details p{
+    margin:6px 0 0;
+    font-size:12.5px;
+    line-height:1.55;
+    color:var(--muted);
+    max-width:65ch;
+  }
+  details p strong{color:var(--ink);font-weight:600}
+
+  .tome{
+    position:relative;
+    flex:1;
+    min-height:0;
+    border-radius:14px;
+    padding:2px;
+    background:linear-gradient(160deg,var(--accent) 0%,var(--rule) 35%,var(--rule) 100%);
+    box-shadow:0 20px 60px -20px rgba(0,0,0,.7);
+  }
+  .tome-inner{
+    height:100%;
+    border-radius:12px;
+    background:var(--surface);
+    overflow:hidden;
+    display:flex;
+  }
+  #term-wrap{
+    flex:1;
+    min-width:0;
+    padding:10px 4px 10px 12px;
+    overflow:auto;
+  }
+  .xterm{height:100%}
+  .xterm-viewport::-webkit-scrollbar{width:8px}
+  .xterm-viewport::-webkit-scrollbar-thumb{background:var(--rule);border-radius:8px}
+
+  .veil{
+    position:absolute;
+    inset:2px;
+    border-radius:12px;
+    background:var(--surface);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+    padding:24px;
+    transition:opacity .4s ease;
+  }
+  .veil p{margin:0;color:var(--muted);font-size:13px;max-width:38ch;line-height:1.5}
+  .veil .spinner{
+    width:22px;height:22px;
+    border-radius:50%;
+    border:2px solid var(--rule);
+    border-top-color:var(--accent);
+    animation:spin 1s linear infinite;
+  }
+  @media (prefers-reduced-motion:reduce){.veil .spinner{animation:none}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .veil[hidden]{display:none}
+
+  footer{
+    flex-shrink:0;
+    font-size:11px;
+    color:var(--muted);
+    text-align:center;
+  }
+</style>
+
+<div class="top">
+  <h1>MAGUS 2<small>RPG narrativo de terminal</small></h1>
+  <div class="controls">
+    <button id="btn-restart" type="button">↺ Reiniciar</button>
+  </div>
+</div>
+
+<details>
+  <summary>Como jogar</summary>
+  <p>
+    Toque ou clique na tela abaixo para focar o terminal — no celular isso abre o teclado.
+    Digite seu nome e, a partir daí, responda cada pergunta com o <strong>número</strong>
+    indicado entre parênteses (ex.: <strong>1</strong> = Sim, <strong>2</strong> = Não) e
+    pressione enter. Escolha entre <strong>Zauber</strong>, o mago, ou <strong>Quelle</strong>,
+    a elfa, e enfrente a jornada até o Cajado MAGUS.
+  </p>
+</details>
+
+<div class="tome">
+  <div class="tome-inner">
+    <div id="term-wrap"></div>
+  </div>
+  <div class="veil" id="veil">
+    <div class="spinner"></div>
+    <p>Preparando a torre de Zauber...</p>
+  </div>
+</div>
+
+<footer>MAGUS 2 — baseado no RPG original de Diogo Freitas</footer>
+
+<script src="xterm.js"></script>
+<script src="xterm-addon-fit.js"></script>
+<script src="magus.js"></script>
+<script>
+(function () {
+  // O jogo original foi escrito para um terminal de ~150 colunas (banner e
+  // separadores decorativos usam essa largura). Em vez de encolher a fonte
+  // até ficar ilegível em telas de celular, mantém-se um tamanho de fonte
+  // confortável e usa-se rolagem horizontal (como um terminal de verdade).
+  var term = new Terminal({
+    convertEol: true,
+    cursorBlink: true,
+    scrollback: 4000,
+    cols: 150,
+    rows: 32,
+    fontFamily: "'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace",
+    fontSize: window.innerWidth < 560 ? 12 : 14,
+    theme: {
+      background: '#161222',
+      foreground: '#ece6d9',
+      cursor: '#d9a441',
+      selectionBackground: '#332b48'
+    }
+  });
+  var fit = new FitAddon.FitAddon();
+  term.loadAddon(fit);
+  term.open(document.getElementById('term-wrap'));
+
+  function refitRows() {
+    // Só ajusta as linhas visíveis à altura disponível; as colunas ficam
+    // fixas em 150 para preservar a arte em ASCII do jogo.
+    try {
+      var proposed = fit.proposeDimensions();
+      if (proposed && proposed.rows) term.resize(150, proposed.rows);
+    } catch (e) {}
+  }
+  refitRows();
+  window.addEventListener('resize', refitRows);
+  window.addEventListener('orientationchange', function () {
+    setTimeout(refitRows, 200);
+  });
+
+  var lineQueue = [];
+  var curLine = null;
+  var curPos = 0;
+  var pendingResolve = null;
+
+  function tryGetChar() {
+    if (curLine !== null && curPos < curLine.length) {
+      return curLine.charCodeAt(curPos++);
+    }
+    if (lineQueue.length > 0) {
+      curLine = lineQueue.shift();
+      curPos = 0;
+      return curLine.charCodeAt(curPos++);
+    }
+    return undefined;
+  }
+
+  function pushLine(text) {
+    lineQueue.push(text + '\n');
+    if (pendingResolve) {
+      var r = pendingResolve;
+      pendingResolve = null;
+      r();
+    }
+  }
+
+  var inputBuffer = '';
+  term.onData(function (data) {
+    for (var i = 0; i < data.length; i++) {
+      var ch = data[i];
+      var code = data.charCodeAt(i);
+      if (ch === '\r' || ch === '\n') {
+        term.write('\r\n');
+        pushLine(inputBuffer);
+        inputBuffer = '';
+      } else if (code === 127 || code === 8) {
+        if (inputBuffer.length > 0) {
+          inputBuffer = inputBuffer.slice(0, -1);
+          term.write('\b \b');
+        }
+      } else if (code >= 32) {
+        inputBuffer += ch;
+        term.write(ch);
+      }
+    }
+  });
+
+  document.getElementById('term-wrap').addEventListener('click', function () {
+    term.focus();
+  });
+
+  var config = {
+    stdin: function () {
+      return config.Asyncify.handleSleep(function (wakeUp) {
+        var c = tryGetChar();
+        if (c !== undefined) {
+          wakeUp(c);
+          return;
+        }
+        pendingResolve = function () {
+          var c2 = tryGetChar();
+          wakeUp(c2 === undefined ? 0 : c2);
+        };
+      });
+    },
+    print: function (text) { term.writeln(text); },
+    printErr: function (text) { /* diagnostic only, not shown to players */ },
+    magusClear: function () { term.clear(); },
+  };
+
+  MagusModule(config).then(function () {
+    document.getElementById('veil').hidden = true;
+    term.focus();
+  });
+
+  document.getElementById('btn-restart').addEventListener('click', function () {
+    location.reload();
+  });
+})();
+</script>

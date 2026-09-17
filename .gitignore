@@ -4,3 +4,7 @@ magus
 *.o
 *.d
 .ccls-cache/
+magus2/web/dist/
+magus2/web/node_modules/
+magus2/web/package.json
+magus2/web/package-lock.json
