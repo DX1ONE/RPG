@@ -353,11 +353,39 @@
     term.focus();
   });
 
+  // --- saída do jogo: bytes -> linhas ------------------------------------
+  //
+  // Por padrão, o "terminal" do emscripten só entrega texto pra tela
+  // quando encontra uma quebra de linha nos bytes escritos (fica
+  // acumulando até ver um '\n' — isso é interno à camada de TTY, e não
+  // tem nada a ver com buffer da libc). A maioria dos prompts do jogo
+  // termina SEM quebra de linha antes de travar esperando resposta (ex.:
+  // "Sair? (S=1;N=2)"), então ficariam presos para sempre — a pergunta
+  // nunca apareceria e a tela pareceria congelada. Por isso a leitura de
+  // caractere (put_char) é substituída por uma própria logo abaixo, que
+  // guarda os bytes e dá a palavra final sobre quando "soltar" uma linha:
+  // manda pra fila normalmente ao ver um '\n', mas também pode ser
+  // forçada a soltar o que tiver pendente (flushPendingOutput, chamada
+  // sempre que o jogo está prestes a travar esperando uma resposta).
+  var pendingOutBytes = [];
+  var utf8Decoder = new TextDecoder('utf-8');
+
+  function flushPendingOutput() {
+    if (pendingOutBytes.length === 0) return;
+    var text = utf8Decoder.decode(new Uint8Array(pendingOutBytes));
+    pendingOutBytes = [];
+    enqueueOutput(text);
+  }
+
+  function enqueueOutput(text) {
+    outQueue.push(text);
+    if (!isTyping) pumpQueue();
+  }
+
   // --- efeito de "máquina de escrever" nas falas ------------------------
   //
-  // O jogo manda cada linha pronta (via printf); em vez de jogá-la inteira
-  // na tela de uma vez, ela é enfileirada e revelada caractere a caractere,
-  // no ritmo de alguém digitando. Linhas decorativas (banners, separadores
+  // Cada linha pronta é enfileirada e revelada caractere a caractere, no
+  // ritmo de alguém digitando. Linhas decorativas (banners, separadores
   // de "====", etc.) aparecem na hora — só o texto falado é digitado.
   var TYPE_MS = 14;
   var outQueue = [];
@@ -375,6 +403,7 @@
   function resetTypewriter() {
     typeGen++;
     outQueue.length = 0;
+    pendingOutBytes.length = 0;
     isTyping = false;
     skipRequested = false;
   }
@@ -410,7 +439,24 @@
   }
 
   var config = {
+    preRun: [function () {
+      // Substitui o put_char padrão da TTY (que só solta texto pra
+      // Module.print ao ver um '\n') pelo nosso, que guarda os bytes e
+      // decide quando soltar a linha — ver flushPendingOutput() acima.
+      config.TTY.default_tty_ops.put_char = function (tty, val) {
+        if (val === null || val === 10 /* '\n' */) {
+          flushPendingOutput();
+          return;
+        }
+        pendingOutBytes.push(val);
+      };
+      config.TTY.default_tty_ops.flush = flushPendingOutput;
+    }],
     stdin: function () {
+      // O jogo está prestes a travar esperando uma resposta: mostra
+      // agora qualquer pergunta/texto que ainda não tenha quebra de
+      // linha (a imensa maioria dos prompts do jogo é assim).
+      flushPendingOutput();
       return config.Asyncify.handleSleep(function (wakeUp) {
         var c = tryGetChar();
         if (c !== undefined) {
@@ -422,10 +468,6 @@
           wakeUp(c2 === undefined ? 0 : c2);
         };
       });
-    },
-    print: function (text) {
-      outQueue.push(text);
-      if (!isTyping) pumpQueue();
     },
     printErr: function (text) { /* diagnostic only, not shown to players */ },
     magusClear: function () { resetTypewriter(); term.clear(); },

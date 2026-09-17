@@ -28,7 +28,7 @@ emcc ../*.c -O3 \
   -s EXPORT_NAME=MagusModule \
   -s ENVIRONMENT=web \
   -s ALLOW_MEMORY_GROWTH=1 \
-  -s "EXPORTED_RUNTIME_METHODS=['Asyncify']" \
+  -s "EXPORTED_RUNTIME_METHODS=['Asyncify','TTY']" \
   -o "$DIST/magus.js"
 
 # --- terminal (xterm.js + addon-fit, via npm) -----------------------------
