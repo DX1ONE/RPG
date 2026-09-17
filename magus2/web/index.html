@@ -323,6 +323,12 @@
 
   var inputBuffer = '';
   term.onData(function (data) {
+    if (isTyping) {
+      // qualquer tecla enquanto uma fala está sendo "digitada" só
+      // adianta ela; a tecla em si não conta como resposta ainda.
+      skipRequested = true;
+      return;
+    }
     for (var i = 0; i < data.length; i++) {
       var ch = data[i];
       var code = data.charCodeAt(i);
@@ -343,8 +349,65 @@
   });
 
   document.getElementById('term-wrap').addEventListener('click', function () {
+    if (isTyping) skipRequested = true;
     term.focus();
   });
+
+  // --- efeito de "máquina de escrever" nas falas ------------------------
+  //
+  // O jogo manda cada linha pronta (via printf); em vez de jogá-la inteira
+  // na tela de uma vez, ela é enfileirada e revelada caractere a caractere,
+  // no ritmo de alguém digitando. Linhas decorativas (banners, separadores
+  // de "====", etc.) aparecem na hora — só o texto falado é digitado.
+  var TYPE_MS = 14;
+  var outQueue = [];
+  var isTyping = false;
+  var skipRequested = false;
+  var typeGen = 0;
+
+  function isDecorative(line) {
+    var trimmed = line.replace(/\s+/g, '');
+    if (trimmed.length === 0) return true;
+    if (trimmed.length < 20) return false;
+    return new Set(trimmed).size <= 5;
+  }
+
+  function resetTypewriter() {
+    typeGen++;
+    outQueue.length = 0;
+    isTyping = false;
+    skipRequested = false;
+  }
+
+  function pumpQueue() {
+    if (outQueue.length === 0) { isTyping = false; return; }
+    isTyping = true;
+    typeLine(outQueue.shift(), typeGen, pumpQueue);
+  }
+
+  function typeLine(line, gen, done) {
+    if (isDecorative(line)) {
+      term.writeln(line);
+      done();
+      return;
+    }
+    var chars = Array.from(line);
+    var i = 0;
+    function step() {
+      if (gen !== typeGen) return; // a tela foi limpa nesse meio-tempo
+      if (skipRequested || i >= chars.length) {
+        term.write(chars.slice(i).join(''));
+        term.write('\r\n');
+        skipRequested = false;
+        done();
+        return;
+      }
+      term.write(chars[i]);
+      i++;
+      setTimeout(step, TYPE_MS);
+    }
+    step();
+  }
 
   var config = {
     stdin: function () {
@@ -360,9 +423,12 @@
         };
       });
     },
-    print: function (text) { term.writeln(text); },
+    print: function (text) {
+      outQueue.push(text);
+      if (!isTyping) pumpQueue();
+    },
     printErr: function (text) { /* diagnostic only, not shown to players */ },
-    magusClear: function () { term.clear(); },
+    magusClear: function () { resetTypewriter(); term.clear(); },
   };
 
   MagusModule(config).then(function () {

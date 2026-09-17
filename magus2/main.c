@@ -15,6 +15,14 @@ int main()
     // enquanto espera o jogador digitar); com o stdin bufferizado, a
     // libc tenta preencher um buffer grande de uma vez e quebra isso.
     setvbuf(stdin, NULL, _IONBF, 0);
+
+    // Sem isso, a stdout fica com buffer cheio (padrão da libc quando não
+    // é um terminal de verdade): dezenas de printf's — inclusive os de
+    // antes e depois de uma pausa dramática (sleep) — só chegam ao
+    // navegador de uma vez, num único bloco, quando o buffer enche ou o
+    // jogo termina. Com stdout por linha, cada printf aparece na hora
+    // certa, no ritmo que o jogo pretende.
+    setvbuf(stdout, NULL, _IOLBF, 0);
 #endif
 
     srand(time(NULL));
