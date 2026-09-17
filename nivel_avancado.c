@@ -192,22 +192,24 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                         switch(escolha_6)
                                                                                                         {
                                                                                                             case 1://Acertou a charada
-                                                                                                            { 
+                                                                                                            {
                                                                                                                 jogadores[k].pontuacao += 10;
 
                                                                                                                 limpar_tela();
                                                                                                                 printf("\t ========================================================================================================================================\n");
-                                                                                                                printf("     >O Mantedor da uma risada... Mantedor~'Não há respostas para questões vagas da vida! \n     >Não perca seu tempo com essas charadas bestas!\n     >Agora dê o fora daqui!!! *invoca guardas que te adormecem e te levam para longe'\n\n");
+                                                                                                                printf("     >O Mantedor da uma risada... Mantedor~'Muito Sábio! Pois bem... Me acompanhe'\n\n");
+                                                                                                                printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
+                                                                                                                printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
+                                                                                                                printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                                                printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                                                                printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
-
-                                                                                                                jogadores[k].derrotas += 1;
+                                                                                                                jogadores[k].vitorias += 1;
                                                                                                                 mostrar_placar(jogadores);
                                                                                                                 sleep(10);
                                                                                                                 limpar_tela();
                                                                                                                 sleep(1);
                                                                                                                 break;
-                                                                                                            } 
+                                                                                                            }
 
                                                                                                             case 2://Errou a charada
                                                                                                             {
@@ -1987,22 +1989,22 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                     switch(escolha_6)
                                                                                                                     {
                                                                                                                         case 1://Acertou a charada
-                                                                                                                        { 
+                                                                                                                        {
                                                                                                                             jogadores[k].pontuacao += 10;
 
                                                                                                                             limpar_tela();
                                                                                                                             printf("\t ========================================================================================================================================\n");
-                                                                                                                             limpar_tela();
-                                                                                                                             printf("\t ========================================================================================================================================\n");
-                                                                                                                             printf("     >O Mantedor da uma risada... Mantedor~'Não há respostas para questões vagas da vida! \n     >Não perca seu tempo com essas charadas bestas!\n     >Agora dê o fora daqui!!! *invoca guardas que te adormecem e te levam para longe'\n\n");
-                                                                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
+                                                                                                                            printf("     >O Mantedor da uma risada... Mantedor~'Muito Sábio! Pois bem... Me acompanhe'\n\n");
+                                                                                                                            printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
+                                                                                                                            printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
+                                                                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-
-                                                                                                                            jogadores[k].derrotas += 1;
+                                                                                                                            jogadores[k].vitorias += 1;
                                                                                                                             mostrar_placar(jogadores);
                                                                                                                             sleep(10);
                                                                                                                             limpar_tela();
-                                                                                                                            sleep(1);         
+                                                                                                                            sleep(1);
                                                                                                                             break;
                                                                                                                         }
 

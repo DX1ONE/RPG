@@ -13,6 +13,8 @@ int main()
 
     int opcao = -1;      //Alternativas no Menu do Jogo
 
+    int personagem = -1; // Alternativas entre os personagens protagonistas
+
     int nivel = -1;      // Alternativas entres os níveis de jogabilidade
 
     int jogar = 1;
@@ -93,7 +95,7 @@ int main()
                     sleep(4);
                     printf("     >Depois disso, eles acabaram brigando e entraram em uma corrida pelo Cajado MAGUS\n\n");
                     sleep(4);
-                    printf("     >Sua missão é, como o feiticeiro Zauber, ganhar esta corrida pelo cajado depois de enfrentar todas as dificuldades no caminho!\n\n");
+                    printf("     >Sua missão é escolher um dos dois e ganhar esta corrida pelo cajado depois de enfrentar todas as dificuldades no caminho!\n\n");
                     sleep(4);
                     printf("     >Boa Sorte,Jogador...\n\n");
                     printf("     ========================================================================================================================================\n\n\n");
@@ -101,6 +103,30 @@ int main()
                     printf("     █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ ████\n\n\n");
                     printf("     ========================================================================================================================================\n");
                     sleep(1);
+
+                    while(1)
+                    {
+                        limpar_tela();
+                        printf("     ========================================================================================================================================\n");
+                        mostrar_logo_magus();
+                        printf("     ========================================================================================================================================\n");
+                        printf("\n");
+                        printf("     Escolha seu personagem: \n\n");//Escolha de Personagem Protagonista
+                        printf("     ============================================================  𝓟 𝓮 𝓻 𝓼 𝓸 𝓷 𝓪 𝓰 𝓮 𝓶  ==========================================================\n\n");
+                        printf("     ❶ - Zauber  【 Sábio | Paciente | Vagaroso 】\n");
+                        printf("     ❷ - Quelle  【 Rápida | Esperta | Impaciente 】\n\n");
+                        printf("     >>");
+                        scanf("%i", &personagem);
+                        getchar();
+                        printf("\n");
+
+                        if (personagem != 1 && personagem != 2)
+                        {
+                            printf("Escolha uma opção válida!!!\n");
+                            continue;
+                        }
+                        break;
+                    }
 
                     while(1)
                     {
@@ -120,19 +146,28 @@ int main()
                         {
                             case 1:
                             {
-                                jogar_nivel_basico(jogadores, k);
+                                if (personagem == 1)
+                                    jogar_nivel_basico(jogadores, k);
+                                else
+                                    jogar_nivel_basico_quelle(jogadores, k);
                                 break;
                             }
 
                             case 2:
                             {
-                                jogar_nivel_medio(jogadores, k);
+                                if (personagem == 1)
+                                    jogar_nivel_medio(jogadores, k);
+                                else
+                                    jogar_nivel_medio_quelle(jogadores, k);
                                 break;
                             }
 
                             case 3:
                             {
-                                jogar_nivel_avancado(jogadores, k);
+                                if (personagem == 1)
+                                    jogar_nivel_avancado(jogadores, k);
+                                else
+                                    jogar_nivel_avancado_quelle(jogadores, k);
                                 break;
                             }
                             default:
