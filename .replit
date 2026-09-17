@@ -1,7 +1,7 @@
-compile = ["make", "-s"]
-run = "./main"
-entrypoint = "main.c"
-hidden = ["main", "main-debug", "**/*.o", "**/*.d", ".ccls-cache", "Makefile"]
+compile = ["make", "-s", "-C", "magus2"]
+run = "./magus2/main"
+entrypoint = "magus2/main.c"
+hidden = ["main", "main-debug", "magus1/magus", "magus2/main", "magus2/main-debug", "**/*.o", "**/*.d", ".ccls-cache", "Makefile"]
 
 [nix]
 channel = "stable-22_11"
@@ -13,7 +13,7 @@ requiredFiles = [".replit", "replit.nix", ".ccls-cache"]
 support = true
 
 [debugger.compile]
-command = ["make", "main-debug"]
+command = ["make", "-C", "magus2", "main-debug"]
 noFileArgs = true
 
 [debugger.interactive]
@@ -51,7 +51,7 @@ externalConsole = false
 logging = {}
 miDebuggerPath = "gdb"
 name = "g++ - Build and debug active file"
-program = "./main-debug"
+program = "./magus2/main-debug"
 request = "launch"
 setupCommands = [
 	{ description = "Enable pretty-printing for gdb", ignoreFailures = true, text = "-enable-pretty-printing" }
