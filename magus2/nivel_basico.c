@@ -646,6 +646,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             continue;
                                                                         }
                                                                     }
+                                                                    break;
                                                                 }
                                                                 break;
                                                             }
@@ -656,6 +657,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 continue;
                                                             }
                                                         }
+                                                        break;
                                                     }
                                                     break;
                                                 } 
@@ -1139,6 +1141,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                             continue;                                   
                                                                                         }
                                                                                     }
+                                                                                    break;
                                                                                 }
                                                                                 break;
                                                                         } 
@@ -2487,6 +2490,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         continue;
                                                                                     }
                                                                                 }
+                                                                                break;
                                                                             }
                                                                             break;
                                                                         }
@@ -2498,6 +2502,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                         }
                                                                     }
+                                                                    break;
                                                                 }
                                                                 break;
                                                             } 

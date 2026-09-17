@@ -106,3 +106,19 @@ Nesta versão:
   - `srand()` deixou de ser chamado várias vezes ao longo do jogo
     (re-semeava o gerador de números aleatórios); agora é chamado uma
     única vez, no início do `main()`.
+  - **20 cenas em laço infinito**: um `break` dentro de `switch` só sai do
+    `switch`, não do `while(1)` em volta — sem um segundo `break` depois
+    do `switch`, a cena voltava a perguntar a mesma coisa para sempre,
+    mesmo depois de mostrar o final da escolha. Acontecia no encontro com
+    o urso, no Golem de areia e em outras cenas, nos 3 níveis. O resto do
+    código já usava o `break` extra; faltava nesses 20 pontos.
+  - **Placar embaralhava os jogadores**: `mostrar_placar()` ordenava o
+    vetor real, mas quem está jogando é identificado pelo índice — depois
+    de um placar, esse índice passava a apontar para outra ficha, e as
+    vitórias/derrotas/pontos seguintes iam para o jogador errado (dava
+    para ver com "Novo Jogador"). Agora ordena uma cópia.
+
+Os dois últimos foram encontrados com uma varredura estrutural dos fontes
+(laços sem saída, `case` sem `break`, variável lida no `scanf` diferente da
+testada no `switch`, atribuição dentro de condição); hoje essa varredura
+não acusa mais nada.

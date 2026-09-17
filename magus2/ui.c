@@ -7,11 +7,43 @@
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
 
-EM_JS(void, js_limpar_tela, (void), {
+// No navegador as falas aparecem aos poucos (efeito de digitação), o que
+// leva tempo real — e o jogo, do lado C, não espera por isso: ele só
+// manda o texto e segue. Sem sincronizar, o jogo chegava à próxima
+// limpeza de tela enquanto boa parte do texto ainda nem tinha aparecido,
+// e a tela era apagada levando junto o que o jogador ainda não tinha
+// lido (era assim que, por exemplo, a mensagem de morte na lama sumia e
+// o jogo parecia "voltar sozinho pro menu" sem explicação).
+//
+// Module.magusDrain() devolve uma promessa que só termina quando tudo o
+// que já foi mandado terminou de aparecer na tela. Esperar por ela antes
+// de limpar a tela (e antes de cada pausa dramática) mantém o jogo no
+// ritmo do que o jogador está realmente lendo.
+EM_ASYNC_JS(void, js_limpar_tela, (void), {
+    if (typeof Module.magusDrain === "function") {
+        await Module.magusDrain();
+    }
     if (typeof Module.magusClear === "function") {
         Module.magusClear();
     }
 });
+
+// Substitui sleep() no build web (ver magus.h): espera o texto terminar
+// de aparecer e só então faz a pausa em si, encurtada — a própria
+// digitação já dá o tempo de leitura que as pausas originais davam.
+EM_ASYNC_JS(void, js_magus_pause, (unsigned segundos), {
+    if (typeof Module.magusDrain === "function") {
+        await Module.magusDrain();
+    }
+    await new Promise(function (resolve) {
+        setTimeout(resolve, segundos * 1000 / 6);
+    });
+});
+
+void magus_web_pause(unsigned segundos)
+{
+    js_magus_pause(segundos);
+}
 #endif
 
 void limpar_tela(void)
@@ -41,15 +73,26 @@ void mostrar_logo_magus(void)
 // comportamento.
 void mostrar_placar(struct player_t jogadores[JOGADORES_MAX])
 {
+    // Ordena uma CÓPIA: ordenar o vetor original trocava os jogadores de
+    // posição, e quem estava jogando é identificado pelo índice (k) lá no
+    // main — depois de um placar, esse índice passava a apontar para
+    // outra pessoa, e as vitórias/derrotas/pontos seguintes iam parar na
+    // ficha errada (dava pra ver com "Novo Jogador", com 2 ou mais).
+    struct player_t ordenados[JOGADORES_MAX];
+    for (int i = 0; i < JOGADORES_MAX; i++)
+    {
+        ordenados[i] = jogadores[i];
+    }
+
     for (int i = 0; i < JOGADORES_MAX - 1; i++)
     {
         for (int j = i + 1; j < JOGADORES_MAX; j++)
         {
-            if (jogadores[i].vitorias < jogadores[j].vitorias)
+            if (ordenados[i].vitorias < ordenados[j].vitorias)
             {
-                struct player_t troca = jogadores[i];
-                jogadores[i] = jogadores[j];
-                jogadores[j] = troca;
+                struct player_t troca = ordenados[i];
+                ordenados[i] = ordenados[j];
+                ordenados[j] = troca;
             }
         }
     }
@@ -61,6 +104,6 @@ void mostrar_placar(struct player_t jogadores[JOGADORES_MAX])
 
     for (int i = 0; i < JOGADORES_MAX; i++)
     {
-        printf("\n\t%-30s\t%-40.2d\t%-40.2d\t%-40.2d\n", jogadores[i].nome, jogadores[i].pontuacao, jogadores[i].vitorias, jogadores[i].derrotas);
+        printf("\n\t%-30s\t%-40.2d\t%-40.2d\t%-40.2d\n", ordenados[i].nome, ordenados[i].pontuacao, ordenados[i].vitorias, ordenados[i].derrotas);
     }
 }

@@ -392,7 +392,10 @@
   // Cada linha pronta é enfileirada e revelada caractere a caractere, no
   // ritmo de alguém digitando. Linhas decorativas (banners, separadores
   // de "====", etc.) aparecem na hora — só o texto falado é digitado.
+  // Linhas muito longas (o cabeçalho do placar, por exemplo) aceleram
+  // para não arrastar: nenhuma passa de LINHA_MS_MAX no total.
   var TYPE_MS = 14;
+  var LINHA_MS_MAX = 1400;
   var outQueue = [];
   var isTyping = false;
   var typeGen = 0;
@@ -414,16 +417,38 @@
     return new Set(trimmed).size <= 5;
   }
 
+  // O jogo (lado C) espera por isto antes de limpar a tela ou fazer uma
+  // pausa dramática: assim ele nunca apaga texto que ainda não terminou
+  // de aparecer para o jogador. Ver magus_web_pause/limpar_tela em ui.c.
+  var drainWaiters = [];
+
+  function isDrained() {
+    return !isTyping && outQueue.length === 0 && pendingOutBytes.length === 0;
+  }
+
+  function notifyDrained() {
+    if (drainWaiters.length === 0) return;
+    var waiters = drainWaiters;
+    drainWaiters = [];
+    waiters.forEach(function (resolve) { resolve(); });
+  }
+
   function resetTypewriter() {
     typeGen++;
     outQueue.length = 0;
     pendingOutBytes.length = 0;
     isTyping = false;
     finishActiveLine = null;
+    notifyDrained(); // ninguém pode ficar esperando um texto que foi descartado
   }
 
   function pumpQueue() {
-    if (outQueue.length === 0) { isTyping = false; finishActiveLine = null; return; }
+    if (outQueue.length === 0) {
+      isTyping = false;
+      finishActiveLine = null;
+      notifyDrained();
+      return;
+    }
     isTyping = true;
     typeLine(outQueue.shift(), typeGen, pumpQueue);
   }
@@ -437,6 +462,7 @@
     var chars = Array.from(line);
     var i = 0;
     var timer = null;
+    var passo = Math.max(2, Math.min(TYPE_MS, LINHA_MS_MAX / chars.length));
 
     finishActiveLine = function () {
       if (gen !== typeGen) return;
@@ -453,7 +479,7 @@
       if (i >= chars.length) { finishActiveLine(); return; }
       term.write(chars[i]);
       i++;
-      timer = setTimeout(step, TYPE_MS);
+      timer = setTimeout(step, passo);
     }
     step();
   }
@@ -490,6 +516,13 @@
       });
     },
     printErr: function (text) { /* diagnostic only, not shown to players */ },
+    // Chamado pelo jogo antes de limpar a tela ou pausar: só termina
+    // quando tudo que já foi escrito terminou de aparecer.
+    magusDrain: function () {
+      flushPendingOutput();
+      if (isDrained()) return Promise.resolve();
+      return new Promise(function (resolve) { drainWaiters.push(resolve); });
+    },
     magusClear: function () { resetTypewriter(); term.clear(); },
   };
 

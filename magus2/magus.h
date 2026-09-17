@@ -4,14 +4,18 @@
 #ifdef __EMSCRIPTEN__
 #include <unistd.h>
 // O jogo original tem centenas de pausas dramáticas (sleep), várias de
-// vários segundos — até 10s nas telas de vitória/derrota. Isso já dava
-// certo ritmo num terminal onde o texto aparecia todo de uma vez; na
-// versão web, some com o efeito de "digitação" das falas (que já cria
-// sua própria sensação de ritmo), então as mesmas pausas em cima disso
-// deixam o jogo lento demais para jogar num link compartilhado. Reduz
-// as pausas para 1/4 da duração original, mantendo a proporção entre
-// elas, sem mudar nada do build nativo.
-#define sleep(s) usleep((useconds_t)(s) * 1000000u / 4u)
+// vários segundos — até 10s nas telas de vitória/derrota. Isso fazia
+// sentido num terminal onde o texto aparecia todo de uma vez: a pausa
+// era o tempo de leitura. Na versão web o texto aparece aos poucos
+// (efeito de digitação), e essa digitação já é o tempo de leitura.
+//
+// magus_web_pause (ui.c) faz as duas coisas na ordem certa: primeiro
+// espera o texto terminar de aparecer, depois faz uma pausa curta (1/6
+// da original) antes de seguir. Sem essa espera, o jogo seguia em frente
+// e limpava a tela por cima de texto que o jogador ainda não tinha lido.
+// O build nativo continua com o sleep() normal.
+void magus_web_pause(unsigned segundos);
+#define sleep(s) magus_web_pause((unsigned)(s))
 #endif
 
 #define JOGADORES_MAX 5
