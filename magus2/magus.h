@@ -1,6 +1,19 @@
 #ifndef MAGUS_H
 #define MAGUS_H
 
+#ifdef __EMSCRIPTEN__
+#include <unistd.h>
+// O jogo original tem centenas de pausas dramáticas (sleep), várias de
+// vários segundos — até 10s nas telas de vitória/derrota. Isso já dava
+// certo ritmo num terminal onde o texto aparecia todo de uma vez; na
+// versão web, some com o efeito de "digitação" das falas (que já cria
+// sua própria sensação de ritmo), então as mesmas pausas em cima disso
+// deixam o jogo lento demais para jogar num link compartilhado. Reduz
+// as pausas para 1/4 da duração original, mantendo a proporção entre
+// elas, sem mudar nada do build nativo.
+#define sleep(s) usleep((useconds_t)(s) * 1000000u / 4u)
+#endif
+
 #define JOGADORES_MAX 5
 
 struct player_t
