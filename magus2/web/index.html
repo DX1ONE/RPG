@@ -323,11 +323,16 @@
 
   var inputBuffer = '';
   term.onData(function (data) {
-    if (isTyping) {
-      // qualquer tecla enquanto uma fala está sendo "digitada" só
-      // adianta ela; a tecla em si não conta como resposta ainda.
-      skipRequested = true;
-      return;
+    if (isTyping && finishActiveLine) {
+      // Qualquer tecla enquanto uma fala está sendo "digitada" adianta
+      // ela na hora (sem esperar o próximo passo da animação). Se depois
+      // disso ainda houver mais falas na fila (o jogo já tinha mandado
+      // várias de uma vez), essa mesma tecla só serve pra continuar
+      // avançando o texto. Só quando o texto todo já tiver aparecido é
+      // que a tecla passa a valer como resposta de verdade — mas nunca é
+      // descartada, só adiada até esse ponto.
+      finishActiveLine();
+      if (isTyping) return;
     }
     for (var i = 0; i < data.length; i++) {
       var ch = data[i];
@@ -349,7 +354,7 @@
   });
 
   document.getElementById('term-wrap').addEventListener('click', function () {
-    if (isTyping) skipRequested = true;
+    if (isTyping && finishActiveLine) finishActiveLine();
     term.focus();
   });
 
@@ -390,8 +395,17 @@
   var TYPE_MS = 14;
   var outQueue = [];
   var isTyping = false;
-  var skipRequested = false;
   var typeGen = 0;
+  // Enquanto uma fala não decorativa está sendo digitada, isto termina
+  // ela na hora (síncrono). Importante: chamar isto NUNCA descarta a
+  // tecla que o jogador acabou de apertar — quem chama continua
+  // processando essa mesma tecla normalmente logo em seguida. Sem isso,
+  // alguém digitando rápido (ou só digitando bem na hora em que a fala
+  // termina) podia ter a tecla da resposta E o Enter "engolidos" como
+  // se fossem só um pedido pra acelerar o texto — perdendo a resposta
+  // de verdade e deixando o jogo esperando um input que nunca chegava
+  // (parecendo travado no mesmo lugar pra sempre).
+  var finishActiveLine = null;
 
   function isDecorative(line) {
     var trimmed = line.replace(/\s+/g, '');
@@ -405,11 +419,11 @@
     outQueue.length = 0;
     pendingOutBytes.length = 0;
     isTyping = false;
-    skipRequested = false;
+    finishActiveLine = null;
   }
 
   function pumpQueue() {
-    if (outQueue.length === 0) { isTyping = false; return; }
+    if (outQueue.length === 0) { isTyping = false; finishActiveLine = null; return; }
     isTyping = true;
     typeLine(outQueue.shift(), typeGen, pumpQueue);
   }
@@ -422,18 +436,24 @@
     }
     var chars = Array.from(line);
     var i = 0;
+    var timer = null;
+
+    finishActiveLine = function () {
+      if (gen !== typeGen) return;
+      if (timer) { clearTimeout(timer); timer = null; }
+      term.write(chars.slice(i).join(''));
+      term.write('\r\n');
+      i = chars.length;
+      finishActiveLine = null;
+      done();
+    };
+
     function step() {
       if (gen !== typeGen) return; // a tela foi limpa nesse meio-tempo
-      if (skipRequested || i >= chars.length) {
-        term.write(chars.slice(i).join(''));
-        term.write('\r\n');
-        skipRequested = false;
-        done();
-        return;
-      }
+      if (i >= chars.length) { finishActiveLine(); return; }
       term.write(chars[i]);
       i++;
-      setTimeout(step, TYPE_MS);
+      timer = setTimeout(step, TYPE_MS);
     }
     step();
   }

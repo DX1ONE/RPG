@@ -468,6 +468,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                     continue;
                                                                 }
                                                             }
+                                                            break;
                                                         }
                                                     }else if (escolha_dado < 15)
                                                     {
