@@ -178,7 +178,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -193,7 +192,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -219,7 +217,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -287,7 +284,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -302,7 +298,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -356,7 +351,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                     jogadores[k].derrotas += 1;
                                                         mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                     sleep(1);
                                                     break;
@@ -413,7 +407,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -456,7 +449,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].vitorias += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -478,7 +470,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                         jogadores[k].derrotas += 1;
                                                          mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                     }
@@ -562,7 +553,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -592,7 +582,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -634,7 +623,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -688,7 +676,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");                                                                                                  
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -754,7 +741,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -780,7 +766,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;                                                                                     
@@ -881,7 +866,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                         jogadores[k].derrotas += 1;
                                                         mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                         limpar_tela();
@@ -904,7 +888,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                         jogadores[k].vitorias += 1;
                                                          mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         break;
                                                     }
@@ -926,7 +909,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                         jogadores[k].derrotas += 1;
                                         mostrar_placar(jogadores);
-                                        sleep(10);
                                         limpar_tela();
                                         }
                                         break;
@@ -1036,7 +1018,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                  mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;  
@@ -1115,7 +1096,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                             jogadores[k].vitorias += 1;
                                                                                              mostrar_placar(jogadores);
-                                                                                            sleep(10);
                                                                                             limpar_tela();
                                                                                             sleep(1);
                                                                                             break;
@@ -1130,7 +1110,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                             jogadores[k].derrotas += 1;
                                                                                              mostrar_placar(jogadores);
-                                                                                            sleep(10);
                                                                                             limpar_tela();
                                                                                             sleep(1);
                                                                                             break;
@@ -1154,7 +1133,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                              mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1248,7 +1226,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                 jogadores[k].derrotas += 1;
                                                                                  mostrar_placar(jogadores);
-                                                                                sleep(10);
                                                                                 limpar_tela();
                                                                                 sleep (1);            
                                                                                 break;
@@ -1291,7 +1268,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                 jogadores[k].vitorias += 1;
                                                                                  mostrar_placar(jogadores);
-                                                                                sleep(10);
                                                                                 limpar_tela();
                                                                                 sleep(1);
                                                                                 break;
@@ -1313,7 +1289,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                     jogadores[k].derrotas += 1;
                                                                      mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                 }
@@ -1329,7 +1304,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -1453,7 +1427,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].vitorias += 1;
                                                                                          mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -1471,7 +1444,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].derrotas += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -1498,7 +1470,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1546,7 +1517,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1618,7 +1588,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -1647,7 +1616,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].derrotas += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -1758,7 +1726,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                     jogadores[k].derrotas += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                     break;
@@ -1782,7 +1749,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                     jogadores[k].vitorias += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                     break;
@@ -1807,7 +1773,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                         jogadores[k].derrotas += 1;
                                                          mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                     }
@@ -1984,7 +1949,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);         
                                                                                         break;
@@ -2001,7 +1965,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].derrotas += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -2028,7 +1991,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -2102,7 +2064,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1); 
                                                                             break;
@@ -2118,34 +2079,9 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");
 
                                                                             jogadores[k].derrotas += 1;
-                                                                            for (int i = 0; i < 4; i++)  // Bubble Sort para fazer ordenação. 
-                                                                            {
-                                                                                for (int j = i + 1; j < 5; j++)
-                                                                                {
-                                                                                    if (jogadores[i].vitorias < jogadores[j].vitorias)
-                                                                                    {
-                                                                                        struct player_t troca = jogadores[i];
-                                                                                        jogadores[i] = jogadores[j];
-                                                                                        jogadores[j] = troca;
-                                                                                    }
-                                                                                }
-                                                                            }
-
-                                                                            sleep(3);
+                                                                            mostrar_placar(jogadores);
                                                                             limpar_tela();
-                                                                            printf("     █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ ████\n\n\n");
-                                                                            printf("                                                                  𝐒 𝐂 𝐎 𝐑 𝐄 𝐁 𝐎 𝐀 𝐑 𝐃                                                             \n\n\n");
-                                                                            printf("     █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ ████\n\n\n");
-                                                                            printf("     %-50s %-50s %60s %60s","-= 𝐉 𝐎 𝐆 𝐀 𝐃 𝐎 𝐑 =-","-= 𝐏 𝐎 𝐍 𝐓 𝐔 𝐀 Ç Ã 𝐎 =-","-= 𝐕 𝐈 𝐓 Ó 𝐑 𝐈 𝐀 𝐒 =-", "-= 𝐃 𝐄 𝐑 𝐑 𝐎 𝐓 𝐀 𝐒 =-");
-
-                                                                            for (int i = 0; i < 5; i++)
-                                                                            {
-                                                                                printf("\n\t%-30s\t%-40.2d\t%-40.2d\t%-40.2d\n", jogadores[i].nome,jogadores[i].pontuacao, jogadores[i].vitorias, jogadores[i].derrotas);
-
-                                                                            }
-                                                                            sleep(10);
-                                                                            limpar_tela();
-                                                                            sleep(1); 
+                                                                            sleep(1);
                                                                             break;
                                                                         }
 
@@ -2202,7 +2138,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 jogadores[k].derrotas+= 1;
                                                                  mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -2259,7 +2194,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                 jogadores[k].derrotas += 1;
                                                                                  mostrar_placar(jogadores);
-                                                                                sleep(10);
                                                                                 limpar_tela();
                                                                                 sleep(1);          
                                                                                 break;
@@ -2302,7 +2236,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                 jogadores[k].vitorias += 1;
                                                                                 mostrar_placar(jogadores);
-                                                                                sleep(10);
                                                                                 limpar_tela();
                                                                                 sleep(1);
                                                                                 break;
@@ -2324,7 +2257,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                     jogadores[k].derrotas += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);   
                                                                 }
@@ -2407,7 +2339,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");       
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -2437,7 +2368,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                         jogadores[k].derrotas += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -2478,7 +2408,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
                                                                                         jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);         
                                                                                         break;
@@ -2533,7 +2462,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");    
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -2598,7 +2526,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
                                                                                         jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -2623,7 +2550,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========             \n");   
                                                                                         jogadores[k].derrotas += 1;
                                                                                          mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -2722,7 +2648,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                     printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========   \n");//FIM
                                                                     jogadores[k].derrotas += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                     break;
@@ -2744,7 +2669,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                     jogadores[k].vitorias += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                     break;
@@ -2767,7 +2691,6 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                         jogadores[k].derrotas += 1;
                                                          mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                     }

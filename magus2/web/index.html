@@ -321,8 +321,23 @@
     }
   }
 
+  // No fim de cada partida o jogo espera "qualquer tecla" para voltar ao
+  // início (ver mostrar_placar em ui.c). Nesse momento a tecla só serve
+  // para continuar: não é eco na tela nem vira resposta da próxima
+  // pergunta.
+  var aguardandoTecla = null;
+
+  function destravarTecla() {
+    if (!aguardandoTecla) return false;
+    var resolve = aguardandoTecla;
+    aguardandoTecla = null;
+    resolve();
+    return true;
+  }
+
   var inputBuffer = '';
   term.onData(function (data) {
+    if (destravarTecla()) return;
     if (isTyping && finishActiveLine) {
       // Qualquer tecla enquanto uma fala está sendo "digitada" adianta
       // ela na hora (sem esperar o próximo passo da animação). Se depois
@@ -354,7 +369,8 @@
   });
 
   document.getElementById('term-wrap').addEventListener('click', function () {
-    if (isTyping && finishActiveLine) finishActiveLine();
+    // tocar na tela também conta como "qualquer tecla" (celular)
+    if (!destravarTecla() && isTyping && finishActiveLine) finishActiveLine();
     term.focus();
   });
 
@@ -522,6 +538,11 @@
       flushPendingOutput();
       if (isDrained()) return Promise.resolve();
       return new Promise(function (resolve) { drainWaiters.push(resolve); });
+    },
+    // Fim de partida: só volta ao início quando o jogador apertar uma
+    // tecla (ou tocar na tela).
+    magusEsperarTecla: function () {
+      return new Promise(function (resolve) { aguardandoTecla = resolve; });
     },
     magusClear: function () { resetTypewriter(); term.clear(); },
   };

@@ -122,3 +122,18 @@ Os dois últimos foram encontrados com uma varredura estrutural dos fontes
 (laços sem saída, `case` sem `break`, variável lida no `scanf` diferente da
 testada no `switch`, atribuição dentro de condição); hoje essa varredura
 não acusa mais nada.
+
+### Fim de partida
+
+Todo desfecho (vitória ou derrota) termina em três momentos, no lugar de
+despejar tudo junto e voltar sozinho ao menu depois de um tempo fixo:
+
+1. a tela do desfecho fica no ar o tempo de ser lida;
+2. o placar entra sozinho na tela;
+3. o jogo só volta ao início quando o jogador mandar — qualquer tecla (ou
+   um toque na tela, no celular); no terminal, ENTER.
+
+Isso vale para os 267 finais de história de uma vez porque todos passam
+por `mostrar_placar()`, que hoje cuida dos três momentos. Três desfechos
+ainda tinham o placar copiado inline (sobra do arquivo único) e ficavam
+de fora — agora também chamam a função.

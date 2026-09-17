@@ -44,7 +44,47 @@ void magus_web_pause(unsigned segundos)
 {
     js_magus_pause(segundos);
 }
+
+// Pausa em milissegundos, para os tempos do fim de partida (que não
+// seguem as pausas do roteiro original). Também espera o texto aparecer.
+EM_ASYNC_JS(void, js_pausa_ms, (unsigned ms), {
+    if (typeof Module.magusDrain === "function") {
+        await Module.magusDrain();
+    }
+    await new Promise(function (resolve) { setTimeout(resolve, ms); });
+});
+
+// Espera o jogador apertar qualquer tecla (ou tocar na tela, no celular).
+EM_ASYNC_JS(void, js_esperar_tecla, (void), {
+    if (typeof Module.magusDrain === "function") {
+        await Module.magusDrain();
+    }
+    if (typeof Module.magusEsperarTecla === "function") {
+        await Module.magusEsperarTecla();
+    }
+});
 #endif
+
+// Tempo para o jogador ler a tela de morte/vitória antes de o placar
+// entrar no lugar dela.
+static void pausa_leitura(void)
+{
+#ifdef __EMSCRIPTEN__
+    js_pausa_ms(2500);
+#else
+    sleep(5);
+#endif
+}
+
+// O fim de partida só avança quando o jogador mandar.
+static void esperar_tecla(void)
+{
+#ifdef __EMSCRIPTEN__
+    js_esperar_tecla();
+#else
+    getchar();
+#endif
+}
 
 void limpar_tela(void)
 {
@@ -67,12 +107,17 @@ void mostrar_logo_magus(void)
     printf("                                         ▀█   ███   █▀    ███    █▀    ████████▀  ████████▀   ▄████████▀                                     \n");
 }
 
-// Ordena os jogadores por vitórias (bubble sort) e imprime o placar dos
-// até 5 jogadores locais. Repetido dezenas de vezes ao final de cada
-// desfecho da história no arquivo original; extraído aqui sem alterar o
-// comportamento.
+// Fecha a partida em três momentos, chamada ao final de cada desfecho da
+// história: (1) segura a tela de morte/vitória que acabou de ser contada,
+// para o jogador ler; (2) troca para o placar, sozinho na tela; (3) só
+// volta ao início quando o jogador mandar. Antes isso era tudo de uma vez
+// — o placar entrava colado embaixo do desfecho e o jogo voltava sozinho
+// ao menu depois de um tempo fixo.
 void mostrar_placar(struct player_t jogadores[JOGADORES_MAX])
 {
+    pausa_leitura();
+    limpar_tela();
+
     // Ordena uma CÓPIA: ordenar o vetor original trocava os jogadores de
     // posição, e quem estava jogando é identificado pelo índice (k) lá no
     // main — depois de um placar, esse índice passava a apontar para
@@ -106,4 +151,12 @@ void mostrar_placar(struct player_t jogadores[JOGADORES_MAX])
     {
         printf("\n\t%-30s\t%-40.2d\t%-40.2d\t%-40.2d\n", ordenados[i].nome, ordenados[i].pontuacao, ordenados[i].vitorias, ordenados[i].derrotas);
     }
+
+    printf("\n\n     █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ ████\n\n");
+#ifdef __EMSCRIPTEN__
+    printf("                                        >Pressione qualquer tecla para voltar ao início...\n");
+#else
+    printf("                                        >Pressione ENTER para voltar ao início...\n");
+#endif
+    esperar_tecla();
 }

@@ -141,7 +141,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].vitorias += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -157,7 +156,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -185,7 +183,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                     jogadores[k].derrotas += 1;
                                                     mostrar_placar(jogadores);
-                                                    sleep(10);
                                                     limpar_tela();
                                                     sleep(1);
                                                     break;
@@ -233,7 +230,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                     jogadores[k].derrotas += 1;
                                                     mostrar_placar(jogadores);
-                                                    sleep(10);
                                                     limpar_tela();
                                                     sleep(1);
                                                     break;
@@ -292,7 +288,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -307,7 +302,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -335,7 +329,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -429,7 +422,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                     jogadores[k].derrotas += 1;
                                                     mostrar_placar(jogadores);
-                                                    sleep(10);
                                                     limpar_tela();
                                                     sleep(1);
                                                     break;
@@ -463,7 +455,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -483,7 +474,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].vitorias += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -558,7 +548,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                         jogadores[k].vitorias += 1;
                                                         mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                         break;
@@ -573,7 +562,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                         jogadores[k].derrotas += 1;
                                                         mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                         break;
@@ -596,7 +584,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                             jogadores[k].derrotas += 1;
                                             mostrar_placar(jogadores);
-                                            sleep(10);
                                             limpar_tela();
                                             sleep(1);
                                         }
@@ -735,7 +722,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -750,7 +736,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -777,7 +762,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -822,7 +806,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -878,7 +861,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                                         jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -893,7 +875,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                                         jogadores[k].derrotas += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -919,7 +900,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1003,7 +983,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -1036,7 +1015,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1056,7 +1034,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1123,7 +1100,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                     jogadores[k].vitorias += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                     break;
@@ -1138,7 +1114,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                     jogadores[k].derrotas += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                     break;
@@ -1161,7 +1136,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                         jogadores[k].derrotas += 1;
                                                         mostrar_placar(jogadores);
-                                                        sleep(10);
                                                         limpar_tela();
                                                         sleep(1);
                                                     }
@@ -1270,7 +1244,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                     jogadores[k].vitorias += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                 }
@@ -1281,7 +1254,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                     jogadores[k].derrotas += 1;
                                                                     mostrar_placar(jogadores);
-                                                                    sleep(10);
                                                                     limpar_tela();
                                                                     sleep(1);
                                                                 }
@@ -1297,7 +1269,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -1383,7 +1354,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                                         jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -1398,7 +1368,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                                         jogadores[k].derrotas += 1;
                                                                                         mostrar_placar(jogadores);
-                                                                                        sleep(10);
                                                                                         limpar_tela();
                                                                                         sleep(1);
                                                                                         break;
@@ -1424,7 +1393,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1453,7 +1421,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -1526,7 +1493,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                 jogadores[k].derrotas += 1;
                                                                 mostrar_placar(jogadores);
-                                                                sleep(10);
                                                                 limpar_tela();
                                                                 sleep(1);
                                                                 break;
@@ -1564,7 +1530,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1579,7 +1544,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                             jogadores[k].derrotas += 1;
                                                                             mostrar_placar(jogadores);
-                                                                            sleep(10);
                                                                             limpar_tela();
                                                                             sleep(1);
                                                                             break;
@@ -1618,7 +1582,6 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                     jogadores[k].derrotas += 1;
                                                     mostrar_placar(jogadores);
-                                                    sleep(10);
                                                     limpar_tela();
                                                     sleep(1);
                                                     break;
