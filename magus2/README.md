@@ -123,6 +123,30 @@ Os dois últimos foram encontrados com uma varredura estrutural dos fontes
 testada no `switch`, atribuição dentro de condição); hoje essa varredura
 não acusa mais nada.
 
+### Dificuldade
+
+Até então os três níveis eram cópias quase idênticas do mesmo roteiro —
+mudavam o banner e um limiar de dado, e todos davam por volta de 27% a
+30% de vitória. Agora cada um tem uma forma própria:
+
+| Nível | Zauber | Quelle |
+|---|---:|---:|
+| Básico | 22 de 44 finais levam ao cajado (**50%**) | 18 de 37 (**49%**) |
+| Médio | 12 de 44 (27%) | 11 de 37 (30%) |
+| Avançado | **1 caminho só** | **1 caminho só** |
+
+No Básico, metade dos desfechos chega ao cajado: quase toda encrenca tem
+uma saída, e quem escapa por pouco segue viagem. No Médio fica a proporção
+original. No Avançado existe um único caminho até o cajado, com 7
+escolhas certas em sequência — errar não mata na hora: você percorre a
+jornada inteira e descobre no fim que o rival chegou primeiro.
+
+Nenhuma vitória sai com menos de **6 escolhas**. Os caminhos que
+terminavam antes disso (a vitória da Quelle pelo bote, por exemplo)
+passam pela reta final em `ui.c`, um último trecho antes do cajado. Ele
+também muda com a dificuldade: no Básico as duas saídas seguem em frente,
+no Médio e no Avançado a escolha errada encerra a corrida.
+
 ### Vários jogadores no mesmo aparelho
 
 A tabela guarda até 5 jogadores. "Novo Jogador" cadastra mais um (sempre

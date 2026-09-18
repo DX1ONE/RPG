@@ -107,6 +107,77 @@ void mostrar_logo_magus(void)
     printf("                                         ▀█   ███   █▀    ███    █▀    ████████▀  ████████▀   ▄████████▀                                     \n");
 }
 
+// Alguns caminhos chegavam ao cajado cedo demais (4 ou 5 escolhas). Esta
+// é a reta final que eles atravessam antes do desfecho, para que nenhuma
+// vitória saia com menos de 6 escolhas.
+//
+// A dificuldade muda o que está em jogo aqui: no Básico as duas saídas
+// seguem em frente (só mudam o caminho), no Médio e no Avançado a escolha
+// errada encerra a corrida. Devolve 1 se o jogador chegou ao cajado.
+int reta_final(struct player_t jogadores[JOGADORES_MAX], int k, int escolhas, int nivel)
+{
+    static const char *pergunta[] = {
+        "     >O caminho se fecha num paredão de pedra com duas passagens.\n\n"
+        "     >Ir pela fenda estreita ou pela trilha alta? (Fenda = 1 ; Trilha = 2)",
+
+        "     >Do outro lado, a névoa engole tudo e dois ruídos disputam sua atenção.\n\n"
+        "     >Seguir a água que corre ou o vento que assobia? (Água = 1 ; Vento = 2)",
+    };
+    static const char *acerto[] = {
+        "     >A fenda é apertada, mas curta — e desemboca já do outro lado do paredão.",
+        "     >A água desce para o mesmo lugar que você procura. É só acompanhar.",
+    };
+    static const char *alternativa[] = {
+        "     >A trilha alta é mais longa, mas te deixa exatamente onde você queria chegar.",
+        "     >O vento assobia entre as pedras e, sem querer, aponta o caminho certo.",
+    };
+    static const char *fracasso[] = {
+        "     >A trilha alta cede sob seus pés. A queda é longa, e o cajado fica para quem chegar depois.",
+        "     >O vento leva você para o lado errado da névoa. Quando a vista volta, já é tarde demais.",
+    };
+
+    int total = (int)(sizeof(pergunta) / sizeof(pergunta[0]));
+    if (escolhas > total) escolhas = total;
+
+    for (int passo = 0; passo < escolhas; passo++)
+    {
+        int escolha = -1;
+
+        while (1)
+        {
+            printf("%s", pergunta[passo]);
+            scanf("%i", &escolha);
+            getchar();
+            printf("\n\n     ========================================================================================================================================\n");
+
+            if (escolha == 1)
+            {
+                jogadores[k].pontuacao += 10;
+                printf("%s\n\n", acerto[passo]);
+                break;
+            }
+
+            if (escolha == 2)
+            {
+                if (nivel == NIVEL_BASICO)
+                {
+                    jogadores[k].pontuacao += 10;
+                    printf("%s\n\n", alternativa[passo]);
+                    break;
+                }
+
+                printf("%s\n\n", fracasso[passo]);
+                printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
+                return 0;
+            }
+
+            printf("     >Opção Inválida! Tente Novamente!\n");
+        }
+    }
+
+    return 1;
+}
+
 // A história de fundo, contada uma vez por jogador (ver main.c): quem já
 // jogou uma partida vai direto para a escolha de personagem.
 void mostrar_introducao(void)

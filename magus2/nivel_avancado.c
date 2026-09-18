@@ -199,11 +199,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                 printf("\t ========================================================================================================================================\n");
                                                                                                                 printf("     >O Mantedor da uma risada... Mantedor~'Muito Sábio! Pois bem... Me acompanhe'\n\n");
                                                                                                                 printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                                                                printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
-                                                                                                                printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                                printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                                jogadores[k].vitorias += 1;
+                                                                                                                jogadores[k].derrotas += 1;
                                                                                                                 mostrar_placar(jogadores);
                                                                                                                 limpar_tela();
                                                                                                                 sleep(1);
@@ -641,11 +642,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                 printf("        ***************___***********         **********|***********  \n");
                                                                                                                 printf("         *************     *********___________******** | *********   \n\n");
                                                                                                                 printf("     >Você entra rapidamente no santuário\n\n");
-                                                                                                                printf("     > Abre a cova do antigo Feiticeiro Ancião Magiccelium e...\n\n");
-                                                                                                                printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                                printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                                jogadores[k].vitorias += 1;
+                                                                                                                jogadores[k].derrotas += 1;
                                                                                                                 mostrar_placar(jogadores);
                                                                                                                 limpar_tela();
                                                                                                                 sleep(1);
@@ -759,11 +761,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                 printf("        ***************___***********         **********|***********  \n");
                                                                                                                 printf("         *************     *********___________******** | *********   \n\n");
                                                                                                                 printf("     >Você entra rapidamente no santuário\n\n");
-                                                                                                                printf("     > Abre a cova do antigo Feiticeiro Ancião Magiccelium e...\n\n");
-                                                                                                                printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                                printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                                jogadores[k].vitorias += 1;
+                                                                                                                jogadores[k].derrotas += 1;
                                                                                                                 mostrar_placar(jogadores);
                                                                                                                 limpar_tela();
                                                                                                                 sleep(1);
@@ -905,11 +908,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                             printf("     >Mantedor~'Muito bem, agora me diga: O que te trás aqui?' \n");
                                                                                             printf("     >Zauber~'Eu desejo pegar o lendário cajado MAGUS! Por favor!\n\n");
                                                                                             printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                                            printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
-                                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                            printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                            printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                            printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                            jogadores[k].vitorias += 1;
+                                                                                            jogadores[k].derrotas += 1;
                                                                                              mostrar_placar(jogadores);
                                                                                             limpar_tela();
                                                                                             break;
@@ -1285,11 +1289,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                     printf("         *************     ********* /=======  ******** | *********   \n\n");
                                                                                                                     printf("     >O Mantedor do santuário escuta que você está atrás do MAGUS e, depois de pensar um pouco...\n\n");
                                                                                                                     printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                                                                    printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!\n\n");
-                                                                                                                    printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                    printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                                    printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                    printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                    printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                    printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                                    jogadores[k].vitorias += 1;
+                                                                                                                    jogadores[k].derrotas += 1;
                                                                                                                      mostrar_placar(jogadores);
                                                                                                                     limpar_tela();
                                                                                                                     sleep(1);
@@ -1966,11 +1971,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                             printf("\t ========================================================================================================================================\n");
                                                                                                                             printf("     >O Mantedor da uma risada... Mantedor~'Muito Sábio! Pois bem... Me acompanhe'\n\n");
                                                                                                                             printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                                                                            printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
-                                                                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                                            printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                            printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                            printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                                            jogadores[k].vitorias += 1;
+                                                                                                                            jogadores[k].derrotas += 1;
                                                                                                                             mostrar_placar(jogadores);
                                                                                                                             limpar_tela();
                                                                                                                             sleep(1);
@@ -2253,11 +2259,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                     printf("         *************     ********* /=======  ******** | *********   \n\n");
                                                                                                                     printf("     >O Mantedor do santuário escuta que você está atrás do MAGUS e, depois de pensar um pouco...\n\n");
                                                                                                                     printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                                                                    printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!\n\n");
-                                                                                                                    printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                    printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                                    printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                    printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                    printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                    printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                                    jogadores[k].vitorias += 1;
+                                                                                                                    jogadores[k].derrotas += 1;
                                                                                                                     mostrar_placar(jogadores);
                                                                                                                     limpar_tela();
                                                                                                                     sleep(1);
@@ -2426,10 +2433,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                             printf("        ***************___***********         **********|***********  \n");
                                                                                                                             printf("         *************     *********___________******** | *********   \n\n");
                                                                                                                             printf("     >Você entra rapidamente no santuário\n\n");
-                                                                                                                            printf("     > Abre a cova do antigo Feiticeiro Ancião Magiccelium e...\n\n");
-                                                                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
-                                                                                                                            jogadores[k].vitorias += 1;
+                                                                                                                            printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                            printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                            printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
+
+                                                                                                                            jogadores[k].derrotas += 1;
                                                                                                                             mostrar_placar(jogadores);
                                                                                                                             limpar_tela();
                                                                                                                             sleep(1);         
@@ -2544,10 +2553,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                                             printf("        ***************___***********         **********|***********  \n");
                                                                                                                             printf("         *************     *********___________******** | *********   \n\n");
                                                                                                                             printf("     >Você entra rapidamente no santuário\n\n");
-                                                                                                                            printf("     > Abre a cova do antigo Feiticeiro Ancião Magiccelium e...\n\n");
-                                                                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
-                                                                                                                            jogadores[k].vitorias += 1;
+                                                                                                                            printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                                            printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                                            printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
+
+                                                                                                                            jogadores[k].derrotas += 1;
                                                                                                                             mostrar_placar(jogadores);
                                                                                                                             limpar_tela();
                                                                                                                             sleep(1);
@@ -2686,11 +2697,12 @@ void jogar_nivel_avancado(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                                         printf("     >Mantedor~'Muito bem, agora me diga: O que te trás aqui?' \n");
                                                                                                         printf("     >Zauber~'Eu desejo pegar o lendário cajado MAGUS! Por favor!\n\n");
                                                                                                         printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                                                        printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
-                                                                                                        printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                                                        printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                                                        printf("     >Você abre a cova do antigo Feiticeiro Ancião Magiccelium...\n\n");
+                                                                                                        printf("     >E encontra o vazio. Na pedra, só as marcas de onde o cajado esteve.\n\n");
+                                                                                                        printf("     >Quelle chegou primeiro. A jornada inteira, e a corrida era dela.\n\n");
+                                                                                                        printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
-                                                                                                        jogadores[k].vitorias += 1;
+                                                                                                        jogadores[k].derrotas += 1;
                                                                                                         mostrar_placar(jogadores);
                                                                                                         limpar_tela();
                                                                                                         sleep(1);

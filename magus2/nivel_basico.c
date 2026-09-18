@@ -187,10 +187,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                         {
                                                                             printf("     >Mantedor~'Você precisa mais do que isso para ser digno do MAGUS!'\n\n");
                                                                             printf("     >O Mantedor joga uma fumaça em seu rosto que faz com que você adormeça profundamente!\n\n");
-                                                                            printf("     >Ao acordar, o santuário está vazio... Assim como a cova do antigo  Feiticeiro Ancião Magiccelium...\n\n");
-                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
+                                                                            printf("     >Ao acordar, o santuário está vazio... Assim como a cova do antigo  Feiticeiro Ancião Magiccelium...\n\n\n\n");
+                                                                            printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                            printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                            printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                            printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                            jogadores[k].derrotas += 1;
+                                                                            jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
                                                                             limpar_tela();
                                                                             sleep(1);
@@ -443,11 +448,18 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 printf("         *************     ********* /=======  ******** | *********   \n\n");
                                                                 printf("     >O Mantedor do santuário escuta que você está atrás do MAGUS e, depois de pensar um pouco...\n\n");
                                                                 printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!\n\n");
-                                                                printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                if (reta_final(jogadores, k, 1, NIVEL_BASICO))
+                                                                {
+                                                                    printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!\n\n");
+                                                                    printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                    printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                jogadores[k].vitorias += 1;
+                                                                    jogadores[k].vitorias += 1;
+                                                                }
+                                                                else
+                                                                {
+                                                                    jogadores[k].derrotas += 1;
+                                                                }
                                                                 mostrar_placar(jogadores);
                                                                 limpar_tela();
                                                                 sleep(1);
@@ -577,10 +589,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             printf("     >Você começa a descer do camelo...\n\n");
                                                                             printf("     >Ao encostar o pé no chão a areia recobre eles e começa a subir por suas pernas!!\n\n");
                                                                             printf("     >Zauber~'NâoOooOOOoo!!!'\n\n");
-                                                                            printf("     >O Golem te enterrou sob 7 palmos abaixo da areia...");
-                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");        
+                                                                            printf("     >O Golem te enterrou sob 7 palmos abaixo da areia...\n\n");
+                                                                            printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                            printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                            printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                            printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                            jogadores[k].derrotas += 1;
+                                                                            jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
                                                                             limpar_tela();
                                                                             sleep(1);
@@ -761,10 +778,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             printf("                                                                  ||   |   |   ||                      \n");
                                                                             printf("                                                                  ||_.-|   |-,_||                      \n");
                                                                             printf("                                                               .- `    `  '`   ` .                     \n");
-                                                                            printf("                                                              '                    '                   \n");
-                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========             \n");       
+                                                                            printf("                                                              '                    '                   \n\n\n");
+                                                                            printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                            printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                            printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                            printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                            jogadores[k].derrotas += 1;
+                                                                            jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
                                                                             limpar_tela();
                                                                             sleep(1);
@@ -882,11 +904,18 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                         printf("     >Mantedor~'Muito bem, agora me diga: O que te trás aqui?' \n");
                                                         printf("     >Zauber~'Eu desejo pegar o lendário cajado MAGUS! Por favor!\n\n");
                                                         printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                        printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
-                                                        printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                        printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                        if (reta_final(jogadores, k, 2, NIVEL_BASICO))
+                                                        {
+                                                            printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
+                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                        jogadores[k].vitorias += 1;
+                                                            jogadores[k].vitorias += 1;
+                                                        }
+                                                        else
+                                                        {
+                                                            jogadores[k].derrotas += 1;
+                                                        }
                                                          mostrar_placar(jogadores);
                                                         limpar_tela();
                                                         break;
@@ -1105,10 +1134,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         {
                                                                                             printf("     >Mantedor~'Você precisa mais do que isso para ser digno do MAGUS!'\n\n");
                                                                                             printf("     >O Mantedor joga uma fumaça em seu rosto que faz com que você adormeça profundamente!\n\n");
-                                                                                            printf("     >Ao acordar, o santuário está vazio... Assim como a cova do antigo  Feiticeiro Ancião Magiccelium...\n\n");
-                                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");
+                                                                                            printf("     >Ao acordar, o santuário está vazio... Assim como a cova do antigo  Feiticeiro Ancião Magiccelium...\n\n\n\n");
+                                                                                            printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                                            printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                                            printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                                            printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                                            jogadores[k].derrotas += 1;
+                                                                                            jogadores[k].vitorias += 1;
                                                                                              mostrar_placar(jogadores);
                                                                                             limpar_tela();
                                                                                             sleep(1);
@@ -1128,10 +1162,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                         {
                                                                             printf("     >Você decide por não atravessar...\n\n");
                                                                             printf("     >Você ouve um rugido muito auto{RUUUUUUU ROAAAAARRRRRRRRR!!!!\n\n");
-                                                                            printf("     >De repente um enorme urso em chamas passa correndo e pula encima de você!!!\n\n");
-                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");
+                                                                            printf("     >De repente um enorme urso em chamas passa correndo e pula encima de você!!!\n\n\n\n");
+                                                                            printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                            printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                            printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                            printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                            jogadores[k].derrotas += 1;
+                                                                            jogadores[k].vitorias += 1;
                                                                              mostrar_placar(jogadores);
                                                                             limpar_tela();
                                                                             sleep(1);
@@ -1221,10 +1260,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             case 1:
                                                                             {
                                                                                 printf("     >O Urso põe as patas na cabeça enquanto berra!!!\n\n");
-                                                                                printf("     >Ele, confuso, parte para cima mais furioso do que nunca!!!\n\n");
-                                                                                printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");     
+                                                                                printf("     >Ele, confuso, parte para cima mais furioso do que nunca!!!\n\n\n\n");
+                                                                                printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                                printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                                printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                                printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                                printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                                jogadores[k].derrotas += 1;
+                                                                                jogadores[k].vitorias += 1;
                                                                                  mostrar_placar(jogadores);
                                                                                 limpar_tela();
                                                                                 sleep (1);            
@@ -1960,10 +2004,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         printf("\t ========================================================================================================================================\n");
                                                                                         printf("     >Mantedor~'Você precisa mais do que isso para ser digno do MAGUS!'\n\n");
                                                                                         printf("     >O Mantedor joga uma fumaça em seu rosto que faz com que você adormeça profundamente!\n\n");
-                                                                                        printf("     >Ao acordar, o santuário está vazio... Assim como a cova do antigo  Feiticeiro Ancião Magiccelium...\n\n");
-                                                                                        printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");
+                                                                                        printf("     >Ao acordar, o santuário está vazio... Assim como a cova do antigo  Feiticeiro Ancião Magiccelium...\n\n\n\n");
+                                                                                        printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                                        printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                                        printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                                        printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                                        printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                        printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                                        jogadores[k].derrotas += 1;
+                                                                                        jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
                                                                                         limpar_tela();
                                                                                         sleep(1);
@@ -1986,10 +2035,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             printf("\t ========================================================================================================================================\n");
                                                                             printf("     >Você decide por não atravessar...\n\n");
                                                                             printf("     >Você ouve um rugido muito auto{RUUUUUUU ROAAAAARRRRRRRRR!!!!\n\n");
-                                                                            printf("     >De repente um enorme urso em chamas passa correndo e pula encima de você!!!\n\n");
-                                                                            printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");
+                                                                            printf("     >De repente um enorme urso em chamas passa correndo e pula encima de você!!!\n\n\n\n");
+                                                                            printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                            printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                            printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                            printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                            printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                            printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                            jogadores[k].derrotas += 1;
+                                                                            jogadores[k].vitorias += 1;
                                                                             mostrar_placar(jogadores);
                                                                             limpar_tela();
                                                                             sleep(1);
@@ -2363,10 +2417,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         printf("     >Você começa a descer do camelo...\n\n");
                                                                                         printf("     >Ao encostar o pé no chão a areia recobre eles e começa a subir por suas pernas!!\n\n");
                                                                                         printf("     >Zauber~'NâoOooOOOoo!!!'\n\n");
-                                                                                        printf("     >O Golem te enterrou sob 7 palmos abaixo da areia...");
-                                                                                        printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n");  
+                                                                                        printf("     >O Golem te enterrou sob 7 palmos abaixo da areia...\n\n");
+                                                                                        printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                                        printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                                        printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                                        printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                                        printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                        printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                                        jogadores[k].derrotas += 1;
+                                                                                        jogadores[k].vitorias += 1;
                                                                                         mostrar_placar(jogadores);
                                                                                         limpar_tela();
                                                                                         sleep(1);
@@ -2546,9 +2605,15 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         printf("                                                                  ||   |   |   ||                      \n");
                                                                                         printf("                                                                  ||_.-|   |-,_||                      \n");
                                                                                         printf("                                                               .- `    `  '`   ` .                     \n");
-                                                                                        printf("                                                              '                    '                   \n");
-                                                                                        printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========             \n");   
-                                                                                        jogadores[k].derrotas += 1;
+                                                                                        printf("                                                              '                    '                   \n\n\n");
+                                                                                        printf("     >...mas, no último instante, você escapa por pouco!\n\n");
+                                                                                        printf("     >Ofegante, você percebe que chegou longe demais para desistir agora.\n\n");
+                                                                                        printf("     >E então, logo à frente, algo brilha entre as pedras...\n\n");
+                                                                                        printf("     >É O CAJADO MAGUS!!!\n\n");
+                                                                                        printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                                        printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+
+                                                                                        jogadores[k].vitorias += 1;
                                                                                          mostrar_placar(jogadores);
                                                                                         limpar_tela();
                                                                                         sleep(1);
@@ -2663,11 +2728,18 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                     printf("     >Mantedor~'Muito bem, agora me diga: O que te trás aqui?' \n");
                                                                     printf("     >Zauber~'Eu desejo pegar o lendário cajado MAGUS! Por favor!\n\n");
                                                                     printf("     >Ele te leva até a cova do antigo Feiticeiro Ancião Magiccelium e em uma nuvem de fumaça, desaparece!\n\n");
-                                                                    printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
-                                                                    printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
-                                                                    printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
+                                                                    if (reta_final(jogadores, k, 1, NIVEL_BASICO))
+                                                                    {
+                                                                        printf("     >Você abre a cova e lá está!!! O CAJADO MAGUS!!!");
+                                                                        printf("     >PARABÉNS, JOGADOR!!! VOCÊ GANHOU A CORRIDA PELO CAJADO CONTRA A ELFA QUELLE!!!\n\n");
+                                                                        printf("                                                        ========== 𝐕 𝐈 𝐓 𝐎 𝐑 𝐈 𝐀! ==========                                         \n\n\n");
 
-                                                                    jogadores[k].vitorias += 1;
+                                                                        jogadores[k].vitorias += 1;
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        jogadores[k].derrotas += 1;
+                                                                    }
                                                                     mostrar_placar(jogadores);
                                                                     limpar_tela();
                                                                     sleep(1);

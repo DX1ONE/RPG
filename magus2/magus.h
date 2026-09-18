@@ -20,6 +20,11 @@ void magus_web_pause(unsigned segundos);
 
 #define JOGADORES_MAX 5
 
+// Níveis de dificuldade, na ordem do menu.
+#define NIVEL_BASICO   1
+#define NIVEL_MEDIO    2
+#define NIVEL_AVANCADO 3
+
 struct player_t
 {
     char nome[21];
@@ -33,6 +38,7 @@ void limpar_tela(void);
 void mostrar_logo_magus(void);
 void mostrar_introducao(void);
 void mostrar_placar(struct player_t jogadores[JOGADORES_MAX]);
+int  reta_final(struct player_t jogadores[JOGADORES_MAX], int k, int escolhas, int nivel);
 
 // nivel_basico.c / nivel_medio.c / nivel_avancado.c (Zauber)
 void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k);
