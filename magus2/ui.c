@@ -107,6 +107,43 @@ void mostrar_logo_magus(void)
     printf("                                         ▀█   ███   █▀    ███    █▀    ████████▀  ████████▀   ▄████████▀                                     \n");
 }
 
+// A história de fundo, contada uma vez por jogador (ver main.c): quem já
+// jogou uma partida vai direto para a escolha de personagem.
+void mostrar_introducao(void)
+{
+    limpar_tela();
+    printf("     ========================================================================================================================================\n");
+    mostrar_logo_magus();
+    printf("     ========================================================================================================================================\n");
+    printf("\n");
+    printf("     Olha só! Parece que temos um jogador corajoso na área!\n");
+    printf("     Muito bem,então... Vamos começar!\n");
+    printf("     ========================================================================================================================================\n");
+    sleep(1);
+    printf("     >Era uma vez, um filho de feiticeiros que morava em uma pequena vila.\n\n");
+    sleep(4);
+    printf("     >Devido a uma perseguição, os pais tiveram que abandoná-lo em um cesto embaixo de uma árvore na floresta perto da vila\n\n");
+    sleep(4);
+    printf("     >Zauber conseguiu sobreviver por conta de algumas pessoas que moravam isolados na floresta e o encontraram.\n\n");
+    sleep(4);
+    printf("     >Após vários anos, ele já era um hábil feiticeiro e, acabou encontrando uma elfa passando na floresta!\n\n");
+    sleep(4);
+    printf("     >Seu nome era Quelle e ela era bem jovem. Eles formaram um bela amizade que durou por anos, até que...\n\n");
+    sleep(4);
+    printf("     >Eles descobriram a existência de um cajado muito poderoso que estava escondido perto de onde eles estavam!\n\n");
+    sleep(4);
+    printf("     >Depois disso, eles acabaram brigando e entraram em uma corrida pelo Cajado MAGUS\n\n");
+    sleep(4);
+    printf("     >Sua missão é escolher um dos dois e ganhar esta corrida pelo cajado depois de enfrentar todas as dificuldades no caminho!\n\n");
+    sleep(4);
+    printf("     >Boa Sorte,Jogador...\n\n");
+    printf("     ========================================================================================================================================\n\n\n");
+    sleep(6);
+    printf("     █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ █████ ████\n\n\n");
+    printf("     ========================================================================================================================================\n");
+    sleep(1);
+}
+
 // Fecha a partida em três momentos, chamada ao final de cada desfecho da
 // história: (1) segura a tela de morte/vitória que acabou de ser contada,
 // para o jogador ler; (2) troca para o placar, sozinho na tela; (3) só

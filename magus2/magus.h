@@ -31,6 +31,7 @@ struct player_t
 // ui.c
 void limpar_tela(void);
 void mostrar_logo_magus(void);
+void mostrar_introducao(void);
 void mostrar_placar(struct player_t jogadores[JOGADORES_MAX]);
 
 // nivel_basico.c / nivel_medio.c / nivel_avancado.c (Zauber)

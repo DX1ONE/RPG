@@ -123,6 +123,14 @@ Os dois últimos foram encontrados com uma varredura estrutural dos fontes
 testada no `switch`, atribuição dentro de condição); hoje essa varredura
 não acusa mais nada.
 
+### Introdução
+
+A história de fundo (como Zauber e Quelle chegaram a essa corrida) é
+contada uma vez por jogador, na primeira partida dele. Quem já terminou
+uma partida — ou seja, já tem vitória ou derrota na tabela — vai direto
+para a escolha de personagem ao começar um novo jogo. Um jogador novo,
+criado em "Novo Jogador", ouve a história normalmente.
+
 ### Fim de partida
 
 Todo desfecho (vitória ou derrota) termina em três momentos, no lugar de
