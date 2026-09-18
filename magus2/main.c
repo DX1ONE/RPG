@@ -37,7 +37,9 @@ int main()
 
     int jogar = 1;
 
-    int k = 0;
+    int k = 0;           // Jogador da vez (índice na tabela)
+
+    int cadastrados = 0; // Quantos jogadores já têm nome na tabela
 
     struct player_t jogadores[JOGADORES_MAX];
     int a;
@@ -62,6 +64,7 @@ int main()
         printf("     >>  ");
         scanf("%20[^\n]s", jogadores[k].nome);
         getchar();
+        cadastrados = k + 1; // nomes novos sempre entram na próxima vaga
         jogar = 2;
 
         while(jogar == 2)
@@ -78,13 +81,34 @@ int main()
             printf("\n");
             printf("     2.【   Ｎｏｖｏ Ｊｏｇａｄｏｒ  】 \n");
             printf("\n");
-            printf("     3.【           Ｓａｉr          】\n");
+            // Só faz sentido trocar de jogador quando há mais de um na
+            // tabela — com dois revezando, é aqui que se alterna entre
+            // eles depois de cada partida.
+            if (cadastrados > 1)
+            {
+                printf("     3.【 Ｅｓｃｏｌｈｅｒ Ｊｏｇａｄｏｒ 】\n");
+                printf("\n");
+                printf("     4.【           Ｓａｉr          】\n");
+            }
+            else
+            {
+                printf("     3.【           Ｓａｉr          】\n");
+            }
             printf("\n");
             printf("     ========================================================================================================================================\n");
             printf("     > ");
             scanf("%i", &opcao); //Capta a opção do Jogador
             getchar();
             printf("\n");
+
+            // Internamente Sair é sempre 4; quando a opção de trocar de
+            // jogador não está na tela, o 3 digitado significa Sair — e o
+            // 4 não existe.
+            if (cadastrados <= 1)
+            {
+                if (opcao == 3)      opcao = 4;
+                else if (opcao == 4) opcao = 0;
+            }
 
             switch(opcao)
             {
@@ -176,14 +200,68 @@ int main()
 
                     break;
                 }
-                case 2:
+                case 2://Novo Jogador
                 {
-                    jogar = 1;
-                    k += 1;
+                    if (cadastrados >= JOGADORES_MAX)
+                    {
+                        printf("     >A tabela só tem lugar para %i jogadores, e já está cheia!\n\n", JOGADORES_MAX);
+                        sleep(3);
+                        break;
+                    }
+
+                    // Entra na próxima vaga livre, e não "uma depois do
+                    // jogador da vez": senão, quem tivesse voltado para um
+                    // jogador anterior apagaria o nome de quem veio depois.
+                    k = cadastrados;
+                    jogar = 1; // sai do menu para o cadastro do nome
                     break;
                 }
 
-                case 3:
+                case 3://Escolher Jogador (só existe com mais de um cadastrado)
+                {
+                    int escolhido = -1;
+
+                    while (1)
+                    {
+                        limpar_tela();
+                        printf("     ========================================================================================================================================\n");
+                        mostrar_logo_magus();
+                        printf("     ========================================================================================================================================\n");
+                        printf("\n");
+                        printf("     Quem joga agora?\n\n");
+                        printf("     ==========================================================  𝓙 𝓸 𝓰 𝓪 𝓭 𝓸 𝓻 𝓮 𝓼  =========================================================\n\n");
+
+                        for (int i = 0; i < cadastrados; i++)
+                        {
+                            printf("     %i - %-22s [ %i vitória(s) | %i derrota(s) | %i ponto(s) ]%s\n\n",
+                                   i + 1,
+                                   jogadores[i].nome,
+                                   jogadores[i].vitorias,
+                                   jogadores[i].derrotas,
+                                   jogadores[i].pontuacao,
+                                   (i == k) ? "   << jogando agora" : "");
+                        }
+
+                        printf("     ========================================================================================================================================\n");
+                        printf("     > ");
+                        scanf("%i", &escolhido);
+                        getchar();
+                        printf("\n");
+
+                        if (escolhido >= 1 && escolhido <= cadastrados)
+                        {
+                            k = escolhido - 1;
+                            break;
+                        }
+
+                        printf("     >Opção Inválida! Tente Novamente!\n");
+                        sleep(2);
+                    }
+
+                    break;
+                }
+
+                case 4://Sair
                 {
                     limpar_tela();
                     printf("     >Eu sabia que ia escapar, a vitória cabe somente aos fortes! Até logo, pobre desertor!\n\n");

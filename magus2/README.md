@@ -123,6 +123,15 @@ Os dois últimos foram encontrados com uma varredura estrutural dos fontes
 testada no `switch`, atribuição dentro de condição); hoje essa varredura
 não acusa mais nada.
 
+### Vários jogadores no mesmo aparelho
+
+A tabela guarda até 5 jogadores. "Novo Jogador" cadastra mais um (sempre
+na próxima vaga livre) e, a partir do segundo, o menu ganha a opção
+**Escolher Jogador**: ela lista quem já está cadastrado, com vitórias,
+derrotas e pontos, marcando quem está jogando no momento. É assim que
+duas pessoas revezando alternam entre si depois de cada partida — antes,
+ao trocar de jogador não havia como voltar ao anterior.
+
 ### Introdução
 
 A história de fundo (como Zauber e Quelle chegaram a essa corrida) é
