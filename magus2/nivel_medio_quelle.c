@@ -892,6 +892,9 @@ void jogar_nivel_medio_quelle(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         limpar_tela();
                                                                                         printf("     ========================================================================================================================================\n");
                                                                                         printf("     >Você hesita, e a Águia não perdoa a hesitação...\n\n");
+                                                                                        printf("     >As garras te pegam pelo ombro e te largam num paredão, dois vales adiante.\n\n");
+                                                                                        printf("     >Você desce a pé, sangrando, e chega ao santuário quando o sol já baixou.\n\n");
+                                                                                        printf("     >O suporte do cajado está vazio. Zauber chegou enquanto você descia.\n\n");
                                                                                         printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
                                                                                         jogadores[k].derrotas += 1;
@@ -1399,6 +1402,9 @@ void jogar_nivel_medio_quelle(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                                         limpar_tela();
                                                                                         printf("     ========================================================================================================================================\n");
                                                                                         printf("     >Você hesita, e mesmo com a capa, as garras da Águia acertam em cheio...\n\n");
+                                                                                        printf("     >A Capa Sibilus rasga inteira, mas segura o golpe: você cai na neve viva, sem ela.\n\n");
+                                                                                        printf("     >Sem a capa, o vento cobra cada passo, e o caminho que sobrava leva horas.\n\n");
+                                                                                        printf("     >Você chega à fenda da rocha a tempo de ver só o encaixe vazio — e as pegadas de Zauber.\n\n");
                                                                                         printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
                                                                                         jogadores[k].derrotas += 1;

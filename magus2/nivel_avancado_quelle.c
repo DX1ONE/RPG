@@ -135,8 +135,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                 printf("     >Ele te entrega um frasquinho: um Bálsamo de Cura!\n\n");
                                                                 sleep(2);
                                                                 printf("     >Com o frasco em mãos, você segue... e no alto de uma rocha vê algo brilhar.\n\n");
-                                                                printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                printf("     >Mas no alto da rocha há só a fenda vazia onde ele esteve encaixado.\n\n");
+                                                                printf("     >A poeira ao redor ainda está solta, levantada por quem passou antes.\n\n");
                                                                 printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                 printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -283,8 +283,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                             printf("     >Você dispara pela neve, mais rápida que a própria Águia!\n\n");
                                                                             printf("     >Sem alcançá-la, a ave desiste e volta para o topo do pico.\n\n");
                                                                             printf("     >Ofegante, você repara em algo cravado no gelo, brilhando com uma luz dourada...\n\n");
-                                                                            printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                            printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                            printf("     >Mas o brilho era o gelo: ficou só o molde vazio do cajado na crosta.\n\n");
+                                                                            printf("     >As marcas são recentes — a neve nem cobriu as pegadas ainda.\n\n");
                                                                             printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -470,8 +470,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                 printf("     ========================================================================================================================================\n");
                                                                 printf("     >Remando com as próprias mãos, você consegue empurrar o bote quebrado até a margem!\n\n");
                                                                 printf("     >Encharcada, você repara em algo preso entre as pedras da margem, brilhando...\n\n");
-                                                                printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                printf("     >Mas entre as pedras há só o encaixe vazio, a água ainda escorrendo dentro dele.\n\n");
+                                                                printf("     >Quem tirou o cajado daqui passou há pouquíssimo tempo.\n\n");
                                                                 printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                 printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -544,10 +544,9 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                         limpar_tela();
                                                         printf("     ========================================================================================================================================\n");
                                                         printf("     >Você acelera com tudo e alcança a outra margem antes que o MONSTRO chegue perto!\n\n");
-                                                        printf("     >Escorregando na areia molhada, sua mão bate em algo duro, meio enterrado...\n\n");
-                                                        printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                        printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
-                                                        printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
+                                                        printf("     >Mas a correnteza te arrastou longe: esta margem fica horas a pé do santuário.\n\n");
+                                                        printf("     >Descalça e encharcada, você contorna o lago pela pedra o resto do dia...\n\n");
+                                                        printf("     >Zauber pegou o caminho seco enquanto você nadava. Ele chegou primeiro.\n\n");
                                                         printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
                                                         jogadores[k].derrotas += 1;
@@ -720,8 +719,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                             printf("     >Logo à frente, um Muambeiro te entrega um Bálsamo de Cura em troca de conversa.\n\n");
                                                                             sleep(2);
                                                                             printf("     >Seguindo em frente, algo brilha entre as pedras...\n\n");
-                                                                            printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                            printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                            printf("     >Mas entre as pedras há só a fenda vazia onde ele esteve encaixado.\n\n");
+                                                                            printf("     >A poeira ao redor ainda está solta, levantada por quem passou antes.\n\n");
                                                                             printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -1033,8 +1032,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                             printf("     ========================================================================================================================================\n");
                                                                             printf("     >Você empurra o bote quebrado até a margem, ofegante mas viva.\n\n");
                                                                             printf("     >Entre as pedras da margem, algo brilha...\n\n");
-                                                                            printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                            printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                            printf("     >Mas entre as pedras há só o encaixe vazio, a água ainda escorrendo dentro dele.\n\n");
+                                                                            printf("     >Quem tirou o cajado daqui passou há pouquíssimo tempo.\n\n");
                                                                             printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -1100,8 +1099,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                     limpar_tela();
                                                                     printf("     ========================================================================================================================================\n");
                                                                     printf("     >Você alcança a margem antes do MONSTRO! Sua mão bate em algo duro na areia...\n\n");
-                                                                    printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                    printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                    printf("     >Mas seus dedos fecham em areia. Resta só a marca funda de onde ele esteve.\n\n");
+                                                                    printf("     >Ao lado, pegadas frescas seguem para longe da margem.\n\n");
                                                                     printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                     printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -1245,8 +1244,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
 
                                                                     printf("     >O Íbex fareja o ar, hesita... e por fim se afasta, enganado pelo disfarce!\n\n");
                                                                     printf("     >Aliviada, você segue em frente e vê algo brilhar atrás de uma pedra.\n\n");
-                                                                    printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                    printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                    printf("     >Mas atrás da pedra há só a fenda vazia onde ele esteve encaixado.\n\n");
+                                                                    printf("     >A poeira ao redor ainda está solta, levantada por quem passou antes.\n\n");
                                                                     printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                     printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -1356,8 +1355,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                                         printf("     ========================================================================================================================================\n");
                                                                                         printf("     >Você corre e a capa esvoaça atrás de você, confundindo a Águia, que desiste da caçada!\n\n");
                                                                                         printf("     >Ofegante, você vê algo dourado brilhando no gelo...\n\n");
-                                                                                        printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                                        printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                                        printf("     >Mas o brilho era o gelo: ficou só o molde vazio do cajado na crosta.\n\n");
+                                                                                        printf("     >As marcas são recentes — a neve nem cobriu as pegadas ainda.\n\n");
                                                                                         printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                                         printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
@@ -1533,8 +1532,8 @@ void jogar_nivel_avancado_quelle(struct player_t jogadores[JOGADORES_MAX], int k
                                                                             printf("     ========================================================================================================================================\n");
                                                                             printf("     >Você pula na água e, para sua surpresa, a Capa Sibilus se enche de ar e flutua, te levando até a margem!\n\n");
                                                                             printf("     >Ainda ofegante, você vê algo brilhar entre as pedras...\n\n");
-                                                                            printf("     >Mas o brilho era só a pedra nua: o cajado não está mais ali.\n\n");
-                                                                            printf("     >Restam as marcas de onde ele esteve até pouco tempo atrás.\n\n");
+                                                                            printf("     >Mas entre as pedras há só a fenda vazia onde ele esteve encaixado.\n\n");
+                                                                            printf("     >A poeira ao redor ainda está solta, levantada por quem passou antes.\n\n");
                                                                             printf("     >Zauber chegou primeiro. A jornada inteira, e a corrida era dele.\n\n");
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 

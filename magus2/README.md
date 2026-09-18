@@ -137,9 +137,38 @@ mudavam o banner e um limiar de dado, e todos davam por volta de 27% a
 
 No Básico, metade dos desfechos chega ao cajado: quase toda encrenca tem
 uma saída, e quem escapa por pouco segue viagem. No Médio fica a proporção
-original. No Avançado existe um único caminho até o cajado, com 7
-escolhas certas em sequência — errar não mata na hora: você percorre a
-jornada inteira e descobre no fim que o rival chegou primeiro.
+original. No Avançado existe um único caminho até o cajado, com 7 escolhas
+certas em sequência; é lá também que mais se perde a corrida no fim, em vez
+de morrer no meio do caminho (veja abaixo).
+
+### Como se perde
+
+Derrota não é só morrer. A corrida tem dois tipos de fim ruim, e a
+proporção entre eles muda com a dificuldade:
+
+| Nível | Mortes | Perder a corrida no fim |
+|---|---:|---:|
+| Básico | 20 (Zauber) / 16 (Quelle) | 2 / 3 |
+| Médio | 30 / 24 | 2 / 2 |
+| Avançado | 31 / 26 | **12 / 10** |
+
+**Morrer** acontece quando a escolha é fatal ali mesmo (a areia movediça,
+o Íbex no penhasco, o rebojo do lago) e termina rápido — é o retorno que
+diz *onde* você errou, e por isso vale mais nos primeiros passos, quando o
+Avançado ainda está ensinando seu caminho único.
+
+**Perder a corrida** é chegar ao cajado e achar o lugar vazio, com as
+marcas ainda frescas. Esse desfecho fica reservado para a reta final
+(6ª ou 7ª escolha), onde ele dói de verdade: no Avançado é o fim mais
+comum, porque lá o erro não mata na hora — você percorre a jornada inteira
+para descobrir no fim que o rival passou primeiro.
+
+Cada um desses finais fala do lugar onde acontece, em vez de repetir um
+texto só: a cova revirada e o altar vazio do santuário (Zauber), o molde
+do cajado no gelo, a marca na areia, o encaixe entre as pedras da margem
+(Quelle). A Quelle também ganhou finais desse tipo no Básico e no Médio —
+antes ela só morria, e a corrida com o Zauber nunca aparecia na história
+dela.
 
 Nenhuma vitória sai com menos de **6 escolhas**. Os caminhos que
 terminavam antes disso (a vitória da Quelle pelo bote, por exemplo)

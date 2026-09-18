@@ -336,7 +336,9 @@ void jogar_nivel_basico_quelle(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 printf("     ========================================================================================================================================\n");
                                                                 printf("     >Insegura, você decide contornar o lago pela beirada...\n\n");
                                                                 printf("     >O gelo fino não aguenta seu peso e cede com um estalo seco!\n\n");
-                                                                printf("     >A água congelada é a última coisa que você sente...\n\n");
+                                                                printf("     >Você se agarra na borda e sai se arrastando, tremendo, com metade do dia perdida.\n\n");
+                                                                printf("     >Quando alcança o outro lado, há só o molde vazio do cajado na crosta de gelo.\n\n");
+                                                                printf("     >As pegadas de Zauber ainda estão frescas na neve.\n\n");
                                                                 printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
                                                                 jogadores[k].derrotas += 1;
@@ -788,7 +790,9 @@ void jogar_nivel_basico_quelle(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 limpar_tela();
                                                                 printf("     ========================================================================================================================================\n");
                                                                 printf("     >Você recua, mas um Íbex da Montanha já está bem atrás de você, encurralando-a!\n\n");
-                                                                printf("     >Ele avança e você não tem para onde correr...\n\n");
+                                                                printf("     >Ele avança, você salta de lado e rola encosta abaixo até parar num banco de neve.\n\n");
+                                                                printf("     >Inteira, mas longe: subir de volta a trilha toma o resto da tarde.\n\n");
+                                                                printf("     >Lá em cima, na fenda da rocha, só restou a marca de onde o cajado esteve.\n\n");
                                                                 printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
                                                                 jogadores[k].derrotas += 1;
@@ -1609,7 +1613,10 @@ void jogar_nivel_basico_quelle(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                         {
                                                                             limpar_tela();
                                                                             printf("     ========================================================================================================================================\n");
-                                                                            printf("     >A capa encharcada pesa como uma pedra e te arrasta para baixo antes de alcançar a margem...\n\n");
+                                                                            printf("     >A capa encharcada pesa como uma pedra e te puxa para baixo...\n\n");
+                                                                            printf("     >Você solta o fecho no último instante e chega à margem tossindo água, sem a Capa Sibilus.\n\n");
+                                                                            printf("     >O encaixe na pedra ainda está molhado por fora — e vazio por dentro.\n\n");
+                                                                            printf("     >Zauber passou por aqui enquanto você lutava contra o próprio tecido.\n\n");
                                                                             printf("                                                        ========== 𝕱𝖎𝖒 𝕯𝖊 𝕵𝖔𝖌𝖔 ==========                                            \n\n\n");
 
                                                                             jogadores[k].derrotas += 1;
