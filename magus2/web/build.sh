@@ -12,13 +12,14 @@ mkdir -p "$DIST"
 
 # --- jogo (C -> WebAssembly) ---------------------------------------------
 #
-# ASYNCIFY é necessário para que scanf/getchar consigam pausar a execução
-# em C enquanto esperam o jogador digitar algo no navegador (ver stdin no
-# index.html). O import fd_read precisa estar em ASYNCIFY_IMPORTS porque
-# não é uma das funções assíncronas padrão do emscripten. setvbuf(stdin,
-# NULL, _IONBF, 0) em main.c (guardado por __EMSCRIPTEN__) é obrigatório:
-# sem stdin sem buffer, a libc tenta ler várias vezes por chamada e
-# quebra o mecanismo de pausa/retomada do Asyncify.
+# ASYNCIFY é necessário para que a leitura da entrada (fgets/getchar, em
+# ui.c) consiga pausar a execução em C enquanto espera o jogador digitar
+# algo no navegador (ver stdin no index.html). O import fd_read precisa
+# estar em ASYNCIFY_IMPORTS porque não é uma das funções assíncronas
+# padrão do emscripten. setvbuf(stdin, NULL, _IONBF, 0) em main.c
+# (guardado por __EMSCRIPTEN__) é obrigatório: sem stdin sem buffer, a
+# libc tenta ler várias vezes por chamada e quebra o mecanismo de
+# pausa/retomada do Asyncify.
 emcc ../*.c -O3 \
   -s ASYNCIFY=1 \
   -s ASYNCIFY_STACK_SIZE=131072 \

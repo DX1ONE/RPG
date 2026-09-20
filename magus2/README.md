@@ -176,6 +176,30 @@ passam pela reta final em `ui.c`, um último trecho antes do cajado. Ele
 também muda com a dificuldade: no Básico as duas saídas seguem em frente,
 no Médio e no Avançado a escolha errada encerra a corrida.
 
+### Entrada do jogador
+
+Toda pergunta do jogo passa por um leitor só (`ler_opcao`, `ler_nome` e
+`ler_resposta_charada`, em `ui.c`), que lê a linha inteira de uma vez. O
+código original usava `scanf("%i", &x)` seguido de `getchar()` em 242
+lugares, e isso trazia dois problemas:
+
+- **Digitar letras onde se esperava um número** deixava a variável com o
+  valor *anterior*, e o `scanf` seguinte relia os mesmos caracteres um a
+  um. Hoje uma entrada que não é número vira `OPCAO_INVALIDA`, e cada
+  menu mostra o seu próprio "Opção Inválida!".
+- **Quando a entrada acabava** (fim de arquivo — Ctrl+D num terminal, ou
+  um script que terminou de mandar respostas), o `scanf` falhava sem
+  consumir nada, e os menus que fazem `continue` em opção inválida
+  repetiam a pergunta para sempre. Hoje o fim da entrada encerra o jogo
+  com uma despedida. Como toda leitura consome uma linha ou encerra, a
+  saída passou a ser proporcional à entrada em vez de infinita.
+
+No navegador, a entrada digitada é enviada ao jogo em **UTF-8**. Antes
+saía `charCodeAt()` — o código do caractere —, o que dá no mesmo para
+ASCII, mas quebrava qualquer acento: quem se chamasse "Zé" via o nome
+corrompido na saudação e no placar. Nomes que não cabem nos 21 bytes
+também são cortados sem deixar meia letra acentuada para trás.
+
 ### Vários jogadores no mesmo aparelho
 
 A tabela guarda até 5 jogadores. "Novo Jogador" cadastra mais um (sempre
@@ -192,6 +216,30 @@ contada uma vez por jogador, na primeira partida dele. Quem já terminou
 uma partida — ou seja, já tem vitória ou derrota na tabela — vai direto
 para a escolha de personagem ao começar um novo jogo. Um jogador novo,
 criado em "Novo Jogador", ouve a história normalmente.
+
+Ela também **espera o jogador** antes de sair da tela. Antes, a história
+inteira ficava no ar por uma pausa fixa de 6 segundos e era apagada pela
+tela de escolha de personagem — quem lia com calma, ou chegava no meio de
+um parágrafo, perdia o fim sem ter como voltar. Agora a passagem é de
+quem está lendo: qualquer tecla (ou um toque, no celular), ENTER no
+terminal.
+
+### A charada do Mantedor
+
+O Mantedor do santuário faz um enigma clássico — *é mais poderoso que os
+deuses, mais maligno que os demônios; os pobres têm, os ricos precisam, e
+quem comê-lo morre*. A resposta agora é **escrita**, e não escolhida
+entre duas opções: as opções `(O Tempo = 2 ; O Nada = 1)` entregavam a
+resposta no próprio enunciado e transformavam o enigma num cara ou coroa.
+O código original já pedia isso, num comentário do autor ao lado da
+leitura: `CONSERTAR COLOCAR COMPARAÇÃO de String`.
+
+A comparação é generosa, porque quem resolve a charada merece acertar
+mesmo escrevendo de outro jeito: maiúsculas, acentos e pontuação são
+ignorados, e valem tanto `nada` quanto `o nada`, `é o nada`,
+`absolutamente nada`, `nenhuma coisa`, `nothing` ou `vazio`. Uma linha em
+branco não gasta a resposta — o Mantedor espera. Qualquer outra resposta
+é um erro de verdade, com o mesmo desfecho de antes.
 
 ### Fim de partida
 

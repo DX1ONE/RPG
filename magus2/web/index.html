@@ -299,21 +299,28 @@
   var curLine = null;
   var curPos = 0;
   var pendingResolve = null;
+  var utf8Encoder = new TextEncoder();
 
+  // A fila guarda BYTES (UTF-8), e não caracteres. O jogo, do lado C, lê
+  // byte a byte e espera UTF-8 — que é como ele próprio escreve. Antes
+  // daqui saía charCodeAt(), o código do caractere: para o ASCII dá no
+  // mesmo, mas um "é" (U+00E9) virava o byte 233 sozinho, que não é UTF-8
+  // válido (é 0xC3 0xA9). Quem digitasse um nome acentuado via o nome
+  // quebrar na saudação e no placar.
   function tryGetChar() {
     if (curLine !== null && curPos < curLine.length) {
-      return curLine.charCodeAt(curPos++);
+      return curLine[curPos++];
     }
     if (lineQueue.length > 0) {
       curLine = lineQueue.shift();
       curPos = 0;
-      return curLine.charCodeAt(curPos++);
+      return curLine[curPos++];
     }
     return undefined;
   }
 
   function pushLine(text) {
-    lineQueue.push(text + '\n');
+    lineQueue.push(utf8Encoder.encode(text + '\n'));
     if (pendingResolve) {
       var r = pendingResolve;
       pendingResolve = null;

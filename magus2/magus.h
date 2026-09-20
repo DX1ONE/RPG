@@ -1,6 +1,8 @@
 #ifndef MAGUS_H
 #define MAGUS_H
 
+#include <stddef.h>  // size_t, usado por ler_nome
+
 #ifdef __EMSCRIPTEN__
 #include <unistd.h>
 // O jogo original tem centenas de pausas dramáticas (sleep), várias de
@@ -33,7 +35,16 @@ struct player_t
     int derrotas;     // +1 derrota
 };
 
-// ui.c
+// Valor devolvido por ler_opcao() quando o jogador digitou algo que não
+// é um número. Nenhum menu usa opções negativas, então cai sempre no
+// "Opção Inválida!" de quem perguntou.
+#define OPCAO_INVALIDA (-1)
+
+// ui.c — leitura da entrada (ver o comentário lá sobre o fim de entrada)
+int  ler_opcao(void);
+void ler_nome(char *destino, size_t tamanho);
+int  ler_resposta_charada(void);
+
 void limpar_tela(void);
 void mostrar_logo_magus(void);
 void mostrar_introducao(void);

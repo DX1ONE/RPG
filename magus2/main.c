@@ -62,8 +62,7 @@ int main()
         printf("                                                                                                                                             \n");
         printf("                                       ||DIGITE ABAIXO O SEU NOME PARA INICIAR A SUA JORNADA||                                               \n");
         printf("     >>  ");
-        scanf("%20[^\n]s", jogadores[k].nome);
-        getchar();
+        ler_nome(jogadores[k].nome, sizeof jogadores[k].nome);
         cadastrados = k + 1; // nomes novos sempre entram na próxima vaga
         jogar = 2;
 
@@ -97,8 +96,7 @@ int main()
             printf("\n");
             printf("     ========================================================================================================================================\n");
             printf("     > ");
-            scanf("%i", &opcao); //Capta a opção do Jogador
-            getchar();
+            opcao = ler_opcao(); //Capta a opção do Jogador
             printf("\n");
 
             // Internamente Sair é sempre 4; quando a opção de trocar de
@@ -135,8 +133,7 @@ int main()
                         printf("     ❶ - Zauber  【 Sábio | Paciente | Vagaroso 】\n");
                         printf("     ❷ - Quelle  【 Rápida | Esperta | Impaciente 】\n\n");
                         printf("     >>");
-                        scanf("%i", &personagem);
-                        getchar();
+                        personagem = ler_opcao();
                         printf("\n");
 
                         if (personagem != 1 && personagem != 2)
@@ -158,8 +155,7 @@ int main()
                         printf("     ==============================================================  𝓝 𝓲 𝓿 𝓮 𝓲 𝓼 ============================================================\n\n");
                         printf("     ❶ - Básico\n     ❷ - Médio\n     ❸ - Avançado\n\n");
                         printf("     >>");
-                        scanf("%i", &nivel);
-                        getchar();
+                        nivel = ler_opcao();
                         printf("\n");
                         switch(nivel)
                         {
@@ -244,8 +240,7 @@ int main()
 
                         printf("     ========================================================================================================================================\n");
                         printf("     > ");
-                        scanf("%i", &escolhido);
-                        getchar();
+                        escolhido = ler_opcao();
                         printf("\n");
 
                         if (escolhido >= 1 && escolhido <= cadastrados)

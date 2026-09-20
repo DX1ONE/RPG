@@ -26,8 +26,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
     while(1)
     {
         printf("     >Sair logo da torre? (S = 1 ; N = 2)");
-        scanf("%i", &escolha_1);
-        getchar();
+        escolha_1 = ler_opcao();
         printf("\n\n");
         printf("     ========================================================================================================================================\n");
 
@@ -46,8 +45,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                 while(1)
                 {
                     printf("     >Qual caminho irá escolher? (Floresta = 1 ; Deserto = 2)");
-                    scanf("%i",&escolha_2);
-                    getchar();
+                    escolha_2 = ler_opcao();
                     printf("\n\n     ========================================================================================================================================\n");
 
 
@@ -69,8 +67,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                             while(1)
                             {
                                 printf("     Você confiará sua trilha no Duende? (S = 1; N = 2)");
-                                scanf("%i", &escolha_3);
-                                getchar();
+                                escolha_3 = ler_opcao();
                                 printf("\n\n     ========================================================================================================================================\n");
 
 
@@ -90,8 +87,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {
                                             printf("     >Você quer atravessar a nuvem de vespas? (S = 1 ; N = 2)");
-                                            scanf("%i", &escolha_4);
-                                            getchar();  
+                                            escolha_4 = ler_opcao();  
                                             printf("\n\t ========================================================================================================================================\n");
 
                                             switch(escolha_4)
@@ -112,8 +108,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer atravessar pela fresta? ( S = 1; N = 2)");
-                                                        scanf("%i", &escolha_5);
-                                                        getchar();
+                                                        escolha_5 = ler_opcao();
                                                         printf("\n\t ========================================================================================================================================\n");
 
                                                         switch (escolha_5)
@@ -157,9 +152,9 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                 while(1)
                                                                 {
-                                                                    printf("     >Mantedor~'É mais poderoso que os deuses, mais maligno que os demônios. É algo que os pobres tem e os ricos precisam.\n     Se você comê-lo, você morre. O que é isto? \n     (O Tempo = 2 ; O Nada = 1)>'");//CHARADA
-                                                                    scanf("%i", &escolha_6); 
-                                                                    getchar();
+                                                                    printf("     >Mantedor~'É mais poderoso que os deuses, mais maligno que os demônios. É algo que os pobres tem e os ricos precisam.\n     Se você comê-lo, você morre. O que é isto?'\n\n");//CHARADA
+                                                                    printf("     >Responda com as suas palavras: ");
+                                                                    escolha_6 = ler_resposta_charada();
                                                                     printf("\n\t ========================================================================================================================================\n");
 
                                                                     switch(escolha_6)
@@ -251,8 +246,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer atravessar pela fresta? ( S = 1; N = 2)\n");
-                                                        scanf("%i", &escolha_5);
-                                                        getchar();
+                                                        escolha_5 = ler_opcao();
 
                                                         switch(escolha_5)
                                                         {
@@ -341,8 +335,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {
                                             printf("     >Dejesa atravessá-la? (S=1/N=2)");
-                                            scanf("%i", &escolha_4);
-                                            getchar();
+                                            escolha_4 = ler_opcao();
 
                                             switch(escolha_4)
                                             {
@@ -399,8 +392,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                         while(1)
                                                         {
                                                             printf("     > *Toque da Loucura(1)* ou *Mortalha Flamejante(2)* >>");
-                                                            scanf("%i", &escolha_5);
-                                                            getchar();
+                                                            escolha_5 = ler_opcao();
 
                                                             switch (escolha_5)
                                                             {
@@ -522,8 +514,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                             {    
 
                                 printf("     >Você quer ir para a esquerda(camelo) ou para a direita(placa)?\n     >(Esquerda(1)/Direita(2)) >> ");
-                                scanf("%i",&escolha_3);
-                                getchar();
+                                escolha_3 = ler_opcao();
 
                                 switch(escolha_3)
                                 {
@@ -535,8 +526,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {    
                                             printf("     >Você quer apressá-lo e correr ou não?(S(1)/N(2)>>");
-                                            scanf("%i",&escolha_4);
-                                            getchar();
+                                            escolha_4 = ler_opcao();
 
                                             switch(escolha_4)
                                             {
@@ -552,8 +542,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer correr pra cima dele ou quer ficar parado? (correr(1)/parado(2)) ");
-                                                        scanf("%i", &escolha_5);
-                                                        getchar();
+                                                        escolha_5 = ler_opcao();
 
                                                         switch(escolha_5)
                                                         {
@@ -579,8 +568,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Quer descer do camelo e seguir a pé ou ficar encima e esperar o montro se acalmar?\n(Descer(1)/Ficar(2))");
-                                                                    scanf("%i", &escolha_6);
-                                                                    getchar();
+                                                                    escolha_6 = ler_opcao();
 
                                                                     switch(escolha_6)
                                                                     {
@@ -678,8 +666,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {    
                                                         printf("     >Você quer deixá-lo beber água ou continuar andando?(água(1)/seguir(2))\n\n");
-                                                        scanf("%i", &escolha_6);
-                                                        getchar();
+                                                        escolha_6 = ler_opcao();
 
                                                         switch(escolha_6)
                                                         {
@@ -718,8 +705,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {        
                                                                     printf("Esquerda(1) ou Direita(2)?");
-                                                                    scanf("%i", &escolha_7);
-                                                                    getchar();
+                                                                    escolha_7 = ler_opcao();
 
                                                                     switch(escolha_7)
                                                                     {
@@ -871,8 +857,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                             while(1)
                                             {
                                                 printf("     >Vassoura(1)/Rodo(2) >>                                                                \n");
-                                                scanf("%i",&escolha_4);
-                                                getchar();
+                                                escolha_4 = ler_opcao();
 
                                                 switch(escolha_4)
                                                 {
@@ -972,8 +957,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                 while(1)
                 {    
                     printf("     >Deseja levá-lo em sua aventura? (S = 1; N = 2)");
-                    scanf("%i",&escolha_2);
-                    getchar();
+                    escolha_2 = ler_opcao();
                     printf("     ========================================================================================================================================\n");
 
                     switch(escolha_2)
@@ -994,8 +978,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                             while(1)
                             {
                                 printf("     >Qual caminho irá escolher? (Floresta = 1 ; Deserto = 2)");
-                                scanf("%i",&escolha_2);
-                                getchar();
+                                escolha_2 = ler_opcao();
 
                                 switch(escolha_2)
                                 {
@@ -1014,8 +997,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {
                                             printf("     Você confiará sua trilha no Duende? (S = 1; N = 2)");
-                                            scanf("%i", &escolha_3);
-                                            getchar();
+                                            escolha_3 = ler_opcao();
 
                                             switch(escolha_3)
                                             {
@@ -1032,8 +1014,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer atravessar a nuvem de vespas? (S = 1 ; N = 2)");
-                                                        scanf("%i", &escolha_4);
-                                                        getchar();
+                                                        escolha_4 = ler_opcao();
                                                         printf("\t ========================================================================================================================================\n");
 
                                                         switch(escolha_4)
@@ -1066,8 +1047,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Você quer atravessar pela fresta? ( S = 1; N = 2)");
-                                                                    scanf("%i", &escolha_5);
-                                                                    getchar();
+                                                                    escolha_5 = ler_opcao();
 
                                                                     switch (escolha_5)
                                                                     {
@@ -1108,9 +1088,9 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                                 while(1)
                                                                                 {
-                                                                                    printf("     >Mantedor~'É mais poderoso que os deuses, mais maligno que os demônios. É algo que os pobres tem e os ricos precisam.\n     Se você comê-lo, você morre. O que é isto? \n     (O Tempo = 2 ; O Nada = 1)>'");//CHARADA
-                                                                                    scanf("%i", &escolha_6); 
-                                                                                    getchar();
+                                                                                    printf("     >Mantedor~'É mais poderoso que os deuses, mais maligno que os demônios. É algo que os pobres tem e os ricos precisam.\n     Se você comê-lo, você morre. O que é isto?'\n\n");//CHARADA
+                                                                                    printf("     >Responda com as suas palavras: ");
+                                                                                    escolha_6 = ler_resposta_charada();
 
                                                                                     switch(escolha_6)
                                                                                     {
@@ -1210,8 +1190,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Dejesa atravessá-la? (S=1/N=2)");
-                                                        scanf("%i", &escolha_4);
-                                                        getchar();
+                                                        escolha_4 = ler_opcao();
 
                                                         switch(escolha_4)
                                                         {
@@ -1252,8 +1231,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                     while(1)
                                                                     {
                                                                         printf("     > *Toque da Loucura(1)* ou *Mortalha Flamejante(2)* >>");
-                                                                        scanf("%i", &escolha_5);
-                                                                        getchar();
+                                                                        escolha_5 = ler_opcao();
 
                                                                         switch (escolha_5)
                                                                         {
@@ -1384,8 +1362,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {    
                                             printf("     >Você quer ir para a esquerda(camelo) ou para a direita(placa)?\n (Esquerda(1)/Direita(2)) >> ");
-                                            scanf("%i",&escolha_3);
-                                            getchar();
+                                            escolha_3 = ler_opcao();
 
                                             switch(escolha_3)
                                             {
@@ -1397,8 +1374,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer apressá-lo e correr ou não?(S(1)/N(2)>>");
-                                                        scanf("%i",&escolha_4);
-                                                        getchar();
+                                                        escolha_4 = ler_opcao();
 
                                                         switch(escolha_4)
                                                         {
@@ -1414,8 +1390,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {    
                                                                     printf("     >Você quer correr pra cima dele ou quer ficar parado? (correr(1)/parado(2)) ");
-                                                                    scanf("%i", &escolha_5);
-                                                                    getchar();
+                                                                    escolha_5 = ler_opcao();
 
                                                                     switch(escolha_5)
                                                                     {
@@ -1429,8 +1404,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             while(1)
                                                                             {
                                                                                 printf("     >Quer jogar a corda na boca do Golem ou quer tentar pisoteá-lo com o camelo em alta velocidade?\n(Jogar(1)/Pisotear(2))");
-                                                                                scanf("%i", &escolha_6);
-                                                                                getchar();
+                                                                                escolha_6 = ler_opcao();
 
                                                                                 switch(escolha_6)
                                                                                 {
@@ -1542,8 +1516,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Você quer deixá-lo beber água ou continuar andando?(água(1)/seguir(2))\n\n");
-                                                                    scanf("%i", &escolha_6);
-                                                                    getchar();
+                                                                    escolha_6 = ler_opcao();
                                                                     printf("\n\t ========================================================================================================================================\n");
 
                                                                     switch(escolha_6)
@@ -1588,8 +1561,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             while(1)
                                                                             {
                                                                                 printf("1- Esquerda(◄) ou 2- Direita(►)?");
-                                                                                scanf("%i", &escolha_7);
-                                                                                getchar();
+                                                                                escolha_7 = ler_opcao();
                                                                                 printf("\n\t ========================================================================================================================================\n");
 
                                                                                 switch(escolha_7)
@@ -1750,8 +1722,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                         while(1)
                                                         {
                                                             printf("     >Vassoura(1)/Rodo(2) >>                                                                \n");
-                                                            scanf("%i",&escolha_4);
-                                                            getchar();
+                                                            escolha_4 = ler_opcao();
                                                             printf("\n\t ========================================================================================================================================\n");
 
                                                             switch(escolha_4)
@@ -1864,8 +1835,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                             while(1)
                             {
                                 printf("     >Qual caminho irá escolher? (Floresta = 1 ; Deserto = 2)");
-                                scanf("%i",&escolha_2);
-                                getchar();
+                                escolha_2 = ler_opcao();
                                 printf("\n\t ========================================================================================================================================\n");
 
                                 switch(escolha_2)
@@ -1886,8 +1856,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {
                                             printf("     Você confiará sua trilha no Duende? (S = 1; N = 2)");
-                                            scanf("%i", &escolha_3);
-                                            getchar();
+                                            escolha_3 = ler_opcao();
                                             printf("\n\t ========================================================================================================================================\n");
 
                                             switch(escolha_3)
@@ -1906,8 +1875,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer atravessar a nuvem de vespas? (S = 1 ; N = 2)");
-                                                        scanf("%i", &escolha_4);
-                                                        getchar();
+                                                        escolha_4 = ler_opcao();
                                                         printf("\n\t ========================================================================================================================================\n");
 
                                                         switch(escolha_4)
@@ -1926,8 +1894,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Você quer atravessar pela fresta? ( S = 1; N = 2)");
-                                                                    scanf("%i", &escolha_5);
-                                                                    getchar();
+                                                                    escolha_5 = ler_opcao();
                                                                     printf("\n\t ========================================================================================================================================\n");
 
                                                                     switch (escolha_5)
@@ -1972,9 +1939,9 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
 
                                                                             while(1)
                                                                             {
-                                                                                printf("     >Mantedor~'É mais poderoso que os deuses, mais maligno que os demônios. É algo que os pobres tem e os ricos precisam.\n     Se você comê-lo, você morre. O que é isto? \n     (O Tempo = 2 ; O Nada = 1)>'");//CHARADA
-                                                                                scanf("%i", &escolha_6); // CONSERTAR COLOCAR COMPARAÇÃO de String
-                                                                                getchar();
+                                                                                printf("     >Mantedor~'É mais poderoso que os deuses, mais maligno que os demônios. É algo que os pobres tem e os ricos precisam.\n     Se você comê-lo, você morre. O que é isto?'\n\n");//CHARADA
+                                                                                printf("     >Responda com as suas palavras: ");
+                                                                                escolha_6 = ler_resposta_charada();
                                                                                 printf("\n\t ========================================================================================================================================\n");
 
                                                                                 switch(escolha_6)
@@ -2077,8 +2044,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Você quer atravessar pela fresta? ( S = 1; N = 2)\n");
-                                                                    scanf("%i", &escolha_5);
-                                                                    getchar();
+                                                                    escolha_5 = ler_opcao();
                                                                     printf("\n\t ========================================================================================================================================\n");
                                                                                                                                                                     switch(escolha_5)
                                                                     {
@@ -2174,8 +2140,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Dejesa atravessá-la? (S=1/N=2)");
-                                                        scanf("%i", &escolha_4);
-                                                        getchar();
+                                                        escolha_4 = ler_opcao();
                                                         printf("\n\t ========================================================================================================================================\n");
 
                                                         switch(escolha_4)
@@ -2235,8 +2200,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                     while(1)
                                                                     {
                                                                         printf("     > *Toque da Loucura(1)* ou *Mortalha Flamejante(2)* >>");
-                                                                        scanf("%i", &escolha_5);
-                                                                        getchar();
+                                                                        escolha_5 = ler_opcao();
 
                                                                         switch (escolha_5)
                                                                         {
@@ -2351,8 +2315,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                         while(1)
                                         {
                                             printf("     >Você quer ir para a esquerda(camelo) ou para a direita(placa)?\n (Esquerda(1)/Direita(2)) >> ");
-                                            scanf("%i", &escolha_3);
-                                            getchar();
+                                            escolha_3 = ler_opcao();
 
                                             switch(escolha_3)
                                             {
@@ -2364,8 +2327,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                     while(1)
                                                     {
                                                         printf("     >Você quer apressá-lo e correr ou não?(S(1)/N(2)>>");
-                                                        scanf("%i",&escolha_4);
-                                                        getchar();
+                                                        escolha_4 = ler_opcao();
 
                                                         switch(escolha_4)
                                                         {
@@ -2381,8 +2343,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Você quer correr pra cima dele ou quer ficar parado? (correr(1)/parado(2)) ");
-                                                                    scanf("%i", &escolha_5);
-                                                                    getchar();
+                                                                    escolha_5 = ler_opcao();
 
                                                                     switch(escolha_5)
                                                                     {
@@ -2407,8 +2368,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             while(1)
                                                                             {
                                                                                 printf("     >Quer descer do camelo e seguir a pé ou ficar encima e esperar o montro se acalmar?\n(Descer(1)/Ficar(2))");
-                                                                                scanf("%i", &escolha_6);
-                                                                                getchar();
+                                                                                escolha_6 = ler_opcao();
 
                                                                                 switch(escolha_6)
                                                                                 {
@@ -2506,8 +2466,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                 while(1)
                                                                 {
                                                                     printf("     >Você quer deixá-lo beber água ou continuar andando?(água(1)/seguir(2))\n\n");
-                                                                    scanf("%i", &escolha_6);
-                                                                    getchar();
+                                                                    escolha_6 = ler_opcao();
 
                                                                     switch(escolha_6)
                                                                     {
@@ -2546,8 +2505,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                                             while(1)
                                                                             {
                                                                                 printf("1- Esquerda(◄) ou 2- Direita(►)?");
-                                                                                scanf("%i", &escolha_7);
-                                                                                getchar();
+                                                                                escolha_7 = ler_opcao();
 
                                                                                 switch(escolha_7)
                                                                                 {
@@ -2697,8 +2655,7 @@ void jogar_nivel_basico(struct player_t jogadores[JOGADORES_MAX], int k)
                                                         while(1)
                                                         {
                                                             printf("     >Vassoura(1)/Rodo(2) >>                                                                \n");
-                                                            scanf("%i",&escolha_4);
-                                                            getchar();
+                                                            escolha_4 = ler_opcao();
 
                                                             switch(escolha_4)
                                                             {
